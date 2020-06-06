@@ -12,7 +12,7 @@
     <parameter name="os_version" value="Catalina"/>
     <parameter name="browserName" value="chrome"/>
     <parameter name="browserVersion" value="83"/>
-    <parameter name="url" value="https://www.delta.com/"/>
+    <parameter name="url" value="https://www.Amazon.com/"/>
 
 
 
