@@ -4,6 +4,7 @@ reporting\ExtentTestManager.class
 reporting\ApplicationLog.class
 databases\Student.class
 reporting\TestLogger.class
+utility\DataReader.class
 databases\ConnectToMongoDB.class
 common\WebAPI.class
 databases\ConnectToSqlDB.class
