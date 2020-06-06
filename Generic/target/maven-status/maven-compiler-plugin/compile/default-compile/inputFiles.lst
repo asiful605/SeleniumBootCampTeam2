@@ -1,10 +1,10 @@
-C:\Users\asifu\IdeaProjects\New folder\SeleniumBootCampTeam2\Generic\src\main\java\databases\ConnectToSqlDB.java
-C:\Users\asifu\IdeaProjects\New folder\SeleniumBootCampTeam2\Generic\src\main\java\reporting\ApplicationLog.java
-C:\Users\asifu\IdeaProjects\New folder\SeleniumBootCampTeam2\Generic\src\main\java\reporting\ExtentTestManager.java
-C:\Users\asifu\IdeaProjects\New folder\SeleniumBootCampTeam2\Generic\src\main\java\reporting\TestLogger.java
-C:\Users\asifu\IdeaProjects\New folder\SeleniumBootCampTeam2\Generic\src\main\java\common\WebAPI.java
-C:\Users\asifu\IdeaProjects\New folder\SeleniumBootCampTeam2\Generic\src\main\java\utility\DataReader.java
-C:\Users\asifu\IdeaProjects\New folder\SeleniumBootCampTeam2\Generic\src\main\java\databases\ConnectToMongoDB.java
-C:\Users\asifu\IdeaProjects\New folder\SeleniumBootCampTeam2\Generic\src\main\java\databases\Student.java
-C:\Users\asifu\IdeaProjects\New folder\SeleniumBootCampTeam2\Generic\src\main\java\databases\User.java
-C:\Users\asifu\IdeaProjects\New folder\SeleniumBootCampTeam2\Generic\src\main\java\reporting\ExtentManager.java
+/Users/kahinaayouni/IdeaProjects/SeleniumBootCampTeam2/Generic/src/main/java/reporting/ExtentManager.java
+/Users/kahinaayouni/IdeaProjects/SeleniumBootCampTeam2/Generic/src/main/java/reporting/TestLogger.java
+/Users/kahinaayouni/IdeaProjects/SeleniumBootCampTeam2/Generic/src/main/java/databases/Student.java
+/Users/kahinaayouni/IdeaProjects/SeleniumBootCampTeam2/Generic/src/main/java/reporting/ExtentTestManager.java
+/Users/kahinaayouni/IdeaProjects/SeleniumBootCampTeam2/Generic/src/main/java/databases/User.java
+/Users/kahinaayouni/IdeaProjects/SeleniumBootCampTeam2/Generic/src/main/java/utility/DataReader.java
+/Users/kahinaayouni/IdeaProjects/SeleniumBootCampTeam2/Generic/src/main/java/databases/ConnectToMongoDB.java
+/Users/kahinaayouni/IdeaProjects/SeleniumBootCampTeam2/Generic/src/main/java/common/WebAPI.java
+/Users/kahinaayouni/IdeaProjects/SeleniumBootCampTeam2/Generic/src/main/java/reporting/ApplicationLog.java
+/Users/kahinaayouni/IdeaProjects/SeleniumBootCampTeam2/Generic/src/main/java/databases/ConnectToSqlDB.java
