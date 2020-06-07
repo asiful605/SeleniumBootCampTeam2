@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Delta_Airline Automation Script" parallel="false">
+
+    <parameter name="useCloudEnv" value="false"/>
+    <parameter name="cloudEnvName" value="browserstack"/>
+    <!--<parameter name="cloudEnvName" value="saucelab"/>-->
+    <!--    <parameter name="os" value="windows"/>-->
+    <parameter name="os" value="OS X"/>
+    <!--    <parameter name="os_version" value="10"/>-->
+    <parameter name="os_version" value="Catalina"/>
+    <parameter name="browserName" value="chrome"/>
+    <parameter name="browserVersion" value="83"/>
+    <parameter name="url" value="https://www.Amazon.com/"/>
+
+
+
+
+
+    <test name="Delta_AirlineHomePage">
+        <classes>
+            <class name="hometest.Delta_AirlineHomeTest"></class>
+
+
+
+
+
+        </classes>
+
+    </test>
+
+
+
+
+</suite>
+
+

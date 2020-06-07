@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 smallBusinessPage\SbPage.class
 searchBoxHome\SearchBox$5.class
 homepage\BoaHomePage$3.class
@@ -22,6 +23,9 @@ homepage\SignIn.class
 searchBoxHome\SearchBox$3.class
 searchBoxHome\SearchBox$4.class
 homepage\BoaHomePage.class
+=======
+homepage/BankOfAmericaHomePage.class
+>>>>>>> 339101e872bdcb6331b72cf93d34d2388c57d76d
 =======
 homepage/BankOfAmericaHomePage.class
 >>>>>>> 339101e872bdcb6331b72cf93d34d2388c57d76d
