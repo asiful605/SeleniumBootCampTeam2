@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="13.539" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="3.349" tests="20" errors="0" skipped="15" failures="5">
   <properties>
     <property name="java.specification.version" value="13"/>
+    <property name="webdriver.chrome.driver" value="../Generic/BrowserDriver/mac/chromedriver"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
     <property name="java.class.path" value="/Users/kahinaayouni/IdeaProjects/SeleniumBootCampTeam2/Delta_Airline/target/test-classes:/Users/kahinaayouni/IdeaProjects/SeleniumBootCampTeam2/Delta_Airline/target/classes:/Users/kahinaayouni/IdeaProjects/SeleniumBootCampTeam2/Generic/target/classes:/Users/kahinaayouni/.m2/repository/org/seleniumhq/selenium/selenium-java/3.141.59/selenium-java-3.141.59.jar:/Users/kahinaayouni/.m2/repository/org/seleniumhq/selenium/selenium-api/3.141.59/selenium-api-3.141.59.jar:/Users/kahinaayouni/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/3.141.59/selenium-chrome-driver-3.141.59.jar:/Users/kahinaayouni/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/3.141.59/selenium-edge-driver-3.141.59.jar:/Users/kahinaayouni/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/3.141.59/selenium-firefox-driver-3.141.59.jar:/Users/kahinaayouni/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/3.141.59/selenium-ie-driver-3.141.59.jar:/Users/kahinaayouni/.m2/repository/org/seleniumhq/selenium/selenium-opera-driver/3.141.59/selenium-opera-driver-3.141.59.jar:/Users/kahinaayouni/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59.jar:/Users/kahinaayouni/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/3.141.59/selenium-safari-driver-3.141.59.jar:/Users/kahinaayouni/.m2/repository/org/seleniumhq/selenium/selenium-support/3.141.59/selenium-support-3.141.59.jar:/Users/kahinaayouni/.m2/repository/net/bytebuddy/byte-buddy/1.8.15/byte-buddy-1.8.15.jar:/Users/kahinaayouni/.m2/repository/org/apache/commons/commons-exec/1.3/commons-exec-1.3.jar:/Users/kahinaayouni/.m2/repository/com/google/guava/guava/25.0-jre/guava-25.0-jre.jar:/Users/kahinaayouni/.m2/repository/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar:/Users/kahinaayouni/.m2/repository/org/checkerframework/checker-compat-qual/2.0.0/checker-compat-qual-2.0.0.jar:/Users/kahinaayouni/.m2/repository/com/google/errorprone/error_prone_annotations/2.1.3/error_prone_annotations-2.1.3.jar:/Users/kahinaayouni/.m2/repository/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.jar:/Users/kahinaayouni/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.14/animal-sniffer-annotations-1.14.jar:/Users/kahinaayouni/.m2/repository/com/squareup/okhttp3/okhttp/3.11.0/okhttp-3.11.0.jar:/Users/kahinaayouni/.m2/repository/com/squareup/okio/okio/1.14.0/okio-1.14.0.jar:/Users/kahinaayouni/.m2/repository/org/seleniumhq/selenium/selenium-server/3.141.59/selenium-server-3.141.59.jar:/Users/kahinaayouni/.m2/repository/com/beust/jcommander/1.72/jcommander-1.72.jar:/Users/kahinaayouni/.m2/repository/net/jcip/jcip-annotations/1.0/jcip-annotations-1.0.jar:/Users/kahinaayouni/.m2/repository/org/seleniumhq/selenium/jetty-repacked/9.4.12.v20180830/jetty-repacked-9.4.12.v20180830.jar:/Users/kahinaayouni/.m2/repository/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar:/Users/kahinaayouni/.m2/repository/org/yaml/snakeyaml/1.19/snakeyaml-1.19.jar:/Users/kahinaayouni/.m2/repository/org/testng/testng/7.1.0/testng-7.1.0.jar:/Users/kahinaayouni/.m2/repository/com/google/inject/guice/4.1.0/guice-4.1.0-no_aop.jar:/Users/kahinaayouni/.m2/repository/javax/inject/javax.inject/1/javax.inject-1.jar:/Users/kahinaayouni/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar:/Users/kahinaayouni/.m2/repository/org/mongodb/mongo-java-driver/3.12.4/mongo-java-driver-3.12.4.jar:/Users/kahinaayouni/.m2/repository/mysql/mysql-connector-java/8.0.20/mysql-connector-java-8.0.20.jar:/Users/kahinaayouni/.m2/repository/com/google/protobuf/protobuf-java/3.6.1/protobuf-java-3.6.1.jar:/Users/kahinaayouni/.m2/repository/org/apache/poi/poi/3.17/poi-3.17.jar:/Users/kahinaayouni/.m2/repository/commons-codec/commons-codec/1.10/commons-codec-1.10.jar:/Users/kahinaayouni/.m2/repository/org/apache/commons/commons-collections4/4.1/commons-collections4-4.1.jar:/Users/kahinaayouni/.m2/repository/org/apache/poi/poi-ooxml/3.17/poi-ooxml-3.17.jar:/Users/kahinaayouni/.m2/repository/org/apache/poi/poi-ooxml-schemas/3.17/poi-ooxml-schemas-3.17.jar:/Users/kahinaayouni/.m2/repository/org/apache/xmlbeans/xmlbeans/2.6.0/xmlbeans-2.6.0.jar:/Users/kahinaayouni/.m2/repository/stax/stax-api/1.0.1/stax-api-1.0.1.jar:/Users/kahinaayouni/.m2/repository/com/github/virtuald/curvesapi/1.04/curvesapi-1.04.jar:/Users/kahinaayouni/.m2/repository/com/aventstack/extentreports/4.1.5/extentreports-4.1.5.jar:/Users/kahinaayouni/.m2/repository/org/freemarker/freemarker/2.3.29/freemarker-2.3.29.jar:/Users/kahinaayouni/.m2/repository/org/apache/httpcomponents/httpclient/4.5.2/httpclient-4.5.2.jar:/Users/kahinaayouni/.m2/repository/org/apache/httpcomponents/httpcore/4.4.4/httpcore-4.4.4.jar:/Users/kahinaayouni/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/kahinaayouni/.m2/repository/org/apache/httpcomponents/httpmime/4.5.2/httpmime-4.5.2.jar:/Users/kahinaayouni/.m2/repository/com/google/code/gson/gson/2.8.6/gson-2.8.6.jar:/Users/kahinaayouni/.m2/repository/org/mongodb/mongodb-driver/3.12.0/mongodb-driver-3.12.0.jar:/Users/kahinaayouni/.m2/repository/org/mongodb/mongodb-driver-core/3.12.0/mongodb-driver-core-3.12.0.jar:/Users/kahinaayouni/.m2/repository/org/mongodb/bson/3.12.0/bson-3.12.0.jar:/Users/kahinaayouni/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar:/Users/kahinaayouni/.m2/repository/org/jsoup/jsoup/1.8.3/jsoup-1.8.3.jar:/Users/kahinaayouni/.m2/repository/org/xerial/sqlite-jdbc/3.8.11.1/sqlite-jdbc-3.8.11.1.jar:/Users/kahinaayouni/.m2/repository/org/apache/commons/commons-lang3/3.10/commons-lang3-3.10.jar:/Users/kahinaayouni/.m2/repository/commons-io/commons-io/2.7/commons-io-2.7.jar:"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
@@ -13,7 +14,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="/usr/local/Cellar/openjdk/13.0.2+8_2/libexec/openjdk.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/kahinaayouni/IdeaProjects/SeleniumBootCampTeam2/Delta_Airline/target/surefire/surefirebooter2283134026713662028.jar /Users/kahinaayouni/IdeaProjects/SeleniumBootCampTeam2/Delta_Airline/target/surefire 2020-06-05T20-41-54_551-jvmRun1 surefire1342369446518947495tmp surefire_815712339656443717663tmp"/>
+    <property name="sun.java.command" value="/Users/kahinaayouni/IdeaProjects/SeleniumBootCampTeam2/Delta_Airline/target/surefire/surefirebooter3219113696705934746.jar /Users/kahinaayouni/IdeaProjects/SeleniumBootCampTeam2/Delta_Airline/target/surefire 2020-06-06T23-14-47_339-jvmRun1 surefire10307419082219760259tmp surefire_17695892397292355530tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/kahinaayouni/IdeaProjects/SeleniumBootCampTeam2/Delta_Airline/target/test-classes:/Users/kahinaayouni/IdeaProjects/SeleniumBootCampTeam2/Delta_Airline/target/classes:/Users/kahinaayouni/IdeaProjects/SeleniumBootCampTeam2/Generic/target/classes:/Users/kahinaayouni/.m2/repository/org/seleniumhq/selenium/selenium-java/3.141.59/selenium-java-3.141.59.jar:/Users/kahinaayouni/.m2/repository/org/seleniumhq/selenium/selenium-api/3.141.59/selenium-api-3.141.59.jar:/Users/kahinaayouni/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/3.141.59/selenium-chrome-driver-3.141.59.jar:/Users/kahinaayouni/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/3.141.59/selenium-edge-driver-3.141.59.jar:/Users/kahinaayouni/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/3.141.59/selenium-firefox-driver-3.141.59.jar:/Users/kahinaayouni/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/3.141.59/selenium-ie-driver-3.141.59.jar:/Users/kahinaayouni/.m2/repository/org/seleniumhq/selenium/selenium-opera-driver/3.141.59/selenium-opera-driver-3.141.59.jar:/Users/kahinaayouni/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59.jar:/Users/kahinaayouni/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/3.141.59/selenium-safari-driver-3.141.59.jar:/Users/kahinaayouni/.m2/repository/org/seleniumhq/selenium/selenium-support/3.141.59/selenium-support-3.141.59.jar:/Users/kahinaayouni/.m2/repository/net/bytebuddy/byte-buddy/1.8.15/byte-buddy-1.8.15.jar:/Users/kahinaayouni/.m2/repository/org/apache/commons/commons-exec/1.3/commons-exec-1.3.jar:/Users/kahinaayouni/.m2/repository/com/google/guava/guava/25.0-jre/guava-25.0-jre.jar:/Users/kahinaayouni/.m2/repository/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar:/Users/kahinaayouni/.m2/repository/org/checkerframework/checker-compat-qual/2.0.0/checker-compat-qual-2.0.0.jar:/Users/kahinaayouni/.m2/repository/com/google/errorprone/error_prone_annotations/2.1.3/error_prone_annotations-2.1.3.jar:/Users/kahinaayouni/.m2/repository/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.jar:/Users/kahinaayouni/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.14/animal-sniffer-annotations-1.14.jar:/Users/kahinaayouni/.m2/repository/com/squareup/okhttp3/okhttp/3.11.0/okhttp-3.11.0.jar:/Users/kahinaayouni/.m2/repository/com/squareup/okio/okio/1.14.0/okio-1.14.0.jar:/Users/kahinaayouni/.m2/repository/org/seleniumhq/selenium/selenium-server/3.141.59/selenium-server-3.141.59.jar:/Users/kahinaayouni/.m2/repository/com/beust/jcommander/1.72/jcommander-1.72.jar:/Users/kahinaayouni/.m2/repository/net/jcip/jcip-annotations/1.0/jcip-annotations-1.0.jar:/Users/kahinaayouni/.m2/repository/org/seleniumhq/selenium/jetty-repacked/9.4.12.v20180830/jetty-repacked-9.4.12.v20180830.jar:/Users/kahinaayouni/.m2/repository/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar:/Users/kahinaayouni/.m2/repository/org/yaml/snakeyaml/1.19/snakeyaml-1.19.jar:/Users/kahinaayouni/.m2/repository/org/testng/testng/7.1.0/testng-7.1.0.jar:/Users/kahinaayouni/.m2/repository/com/google/inject/guice/4.1.0/guice-4.1.0-no_aop.jar:/Users/kahinaayouni/.m2/repository/javax/inject/javax.inject/1/javax.inject-1.jar:/Users/kahinaayouni/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar:/Users/kahinaayouni/.m2/repository/org/mongodb/mongo-java-driver/3.12.4/mongo-java-driver-3.12.4.jar:/Users/kahinaayouni/.m2/repository/mysql/mysql-connector-java/8.0.20/mysql-connector-java-8.0.20.jar:/Users/kahinaayouni/.m2/repository/com/google/protobuf/protobuf-java/3.6.1/protobuf-java-3.6.1.jar:/Users/kahinaayouni/.m2/repository/org/apache/poi/poi/3.17/poi-3.17.jar:/Users/kahinaayouni/.m2/repository/commons-codec/commons-codec/1.10/commons-codec-1.10.jar:/Users/kahinaayouni/.m2/repository/org/apache/commons/commons-collections4/4.1/commons-collections4-4.1.jar:/Users/kahinaayouni/.m2/repository/org/apache/poi/poi-ooxml/3.17/poi-ooxml-3.17.jar:/Users/kahinaayouni/.m2/repository/org/apache/poi/poi-ooxml-schemas/3.17/poi-ooxml-schemas-3.17.jar:/Users/kahinaayouni/.m2/repository/org/apache/xmlbeans/xmlbeans/2.6.0/xmlbeans-2.6.0.jar:/Users/kahinaayouni/.m2/repository/stax/stax-api/1.0.1/stax-api-1.0.1.jar:/Users/kahinaayouni/.m2/repository/com/github/virtuald/curvesapi/1.04/curvesapi-1.04.jar:/Users/kahinaayouni/.m2/repository/com/aventstack/extentreports/4.1.5/extentreports-4.1.5.jar:/Users/kahinaayouni/.m2/repository/org/freemarker/freemarker/2.3.29/freemarker-2.3.29.jar:/Users/kahinaayouni/.m2/repository/org/apache/httpcomponents/httpclient/4.5.2/httpclient-4.5.2.jar:/Users/kahinaayouni/.m2/repository/org/apache/httpcomponents/httpcore/4.4.4/httpcore-4.4.4.jar:/Users/kahinaayouni/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/kahinaayouni/.m2/repository/org/apache/httpcomponents/httpmime/4.5.2/httpmime-4.5.2.jar:/Users/kahinaayouni/.m2/repository/com/google/code/gson/gson/2.8.6/gson-2.8.6.jar:/Users/kahinaayouni/.m2/repository/org/mongodb/mongodb-driver/3.12.0/mongodb-driver-3.12.0.jar:/Users/kahinaayouni/.m2/repository/org/mongodb/mongodb-driver-core/3.12.0/mongodb-driver-core-3.12.0.jar:/Users/kahinaayouni/.m2/repository/org/mongodb/bson/3.12.0/bson-3.12.0.jar:/Users/kahinaayouni/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar:/Users/kahinaayouni/.m2/repository/org/jsoup/jsoup/1.8.3/jsoup-1.8.3.jar:/Users/kahinaayouni/.m2/repository/org/xerial/sqlite-jdbc/3.8.11.1/sqlite-jdbc-3.8.11.1.jar:/Users/kahinaayouni/.m2/repository/org/apache/commons/commons-lang3/3.10/commons-lang3-3.10.jar:/Users/kahinaayouni/.m2/repository/commons-io/commons-io/2.7/commons-io-2.7.jar:"/>
@@ -29,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
-    <property name="surefire.real.class.path" value="/Users/kahinaayouni/IdeaProjects/SeleniumBootCampTeam2/Delta_Airline/target/surefire/surefirebooter2283134026713662028.jar"/>
+    <property name="surefire.real.class.path" value="/Users/kahinaayouni/IdeaProjects/SeleniumBootCampTeam2/Delta_Airline/target/surefire/surefirebooter3219113696705934746.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="13.0.2+8"/>
@@ -54,5 +55,101 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="57.0"/>
   </properties>
-  <testcase name="testDeltaCarriersSearchPage" classname="hometest.Delta_AirlineHomeTest" time="5.725"/>
+  <testcase name="setUp" classname="hometest.Delta_AirlineHomeTest" time="2.966">
+    <failure message="session not created: This version of ChromeDriver only supports Chrome version 84&#10;Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;&#10;System info: host: &apos;kahinas-MBP.fios-router.home&apos;, ip: &apos;fe80:0:0:0:49c:cb56:ec61:ff8f%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.15.4&apos;, java.version: &apos;13.0.2&apos;&#10;Driver info: driver.version: ChromeDriver&#10;remote stacktrace: 0   chromedriver                        0x000000010dcc2c49 chromedriver + 4893769&#10;1   chromedriver                        0x000000010dc5c0e3 chromedriver + 4473059&#10;2   chromedriver                        0x000000010d8cf8fd chromedriver + 751869&#10;3   chromedriver                        0x000000010d8313b9 chromedriver + 103353&#10;4   chromedriver                        0x000000010d82d696 chromedriver + 87702&#10;5   chromedriver                        0x000000010d82a9b9 chromedriver + 76217&#10;6   chromedriver                        0x000000010d85d043 chromedriver + 282691&#10;7   chromedriver                        0x000000010d859e43 chromedriver + 269891&#10;8   chromedriver                        0x000000010d83362a chromedriver + 112170&#10;9   chromedriver                        0x000000010d834635 chromedriver + 116277&#10;10  chromedriver                        0x000000010dc845af chromedriver + 4638127&#10;11  chromedriver                        0x000000010dc9191b chromedriver + 4692251&#10;12  chromedriver                        0x000000010dc916bb chromedriver + 4691643&#10;13  chromedriver                        0x000000010dc68109 chromedriver + 4522249&#10;14  chromedriver                        0x000000010dc91ea3 chromedriver + 4693667&#10;15  chromedriver                        0x000000010dc7a073 chromedriver + 4595827&#10;16  chromedriver                        0x000000010dca9094 chromedriver + 4788372&#10;17  chromedriver                        0x000000010dcc8db7 chromedriver + 4918711&#10;18  libsystem_pthread.dylib             0x00007fff6b4c6109 _pthread_start + 148&#10;19  libsystem_pthread.dylib             0x00007fff6b4c1b8b thread_start + 15&#10;" type="org.openqa.selenium.SessionNotCreatedException"><![CDATA[org.openqa.selenium.SessionNotCreatedException: 
+session not created: This version of ChromeDriver only supports Chrome version 84
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'kahinas-MBP.fios-router.home', ip: 'fe80:0:0:0:49c:cb56:ec61:ff8f%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.4', java.version: '13.0.2'
+Driver info: driver.version: ChromeDriver
+remote stacktrace: 0   chromedriver                        0x000000010dcc2c49 chromedriver + 4893769
+1   chromedriver                        0x000000010dc5c0e3 chromedriver + 4473059
+2   chromedriver                        0x000000010d8cf8fd chromedriver + 751869
+3   chromedriver                        0x000000010d8313b9 chromedriver + 103353
+4   chromedriver                        0x000000010d82d696 chromedriver + 87702
+5   chromedriver                        0x000000010d82a9b9 chromedriver + 76217
+6   chromedriver                        0x000000010d85d043 chromedriver + 282691
+7   chromedriver                        0x000000010d859e43 chromedriver + 269891
+8   chromedriver                        0x000000010d83362a chromedriver + 112170
+9   chromedriver                        0x000000010d834635 chromedriver + 116277
+10  chromedriver                        0x000000010dc845af chromedriver + 4638127
+11  chromedriver                        0x000000010dc9191b chromedriver + 4692251
+12  chromedriver                        0x000000010dc916bb chromedriver + 4691643
+13  chromedriver                        0x000000010dc68109 chromedriver + 4522249
+14  chromedriver                        0x000000010dc91ea3 chromedriver + 4693667
+15  chromedriver                        0x000000010dc7a073 chromedriver + 4595827
+16  chromedriver                        0x000000010dca9094 chromedriver + 4788372
+17  chromedriver                        0x000000010dcc8db7 chromedriver + 4918711
+18  libsystem_pthread.dylib             0x00007fff6b4c6109 _pthread_start + 148
+19  libsystem_pthread.dylib             0x00007fff6b4c1b8b thread_start + 15
+
+]]></failure>
+    <system-out><![CDATA[Extent Report Directory/Users/kahinaayouni/IdeaProjects/SeleniumBootCampTeam2/Delta_Airline/target/surefire-reports/html
+]]></system-out>
+    <system-err><![CDATA[Starting ChromeDriver 84.0.4147.30 (48b3e868b4cc0aa7e8149519690b6f6949e110a8-refs/branch-heads/4147@{#310}) on port 27523
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+]]></system-err>
+  </testcase>
+  <testcase name="setUp" classname="hometest.Delta_AirlineHomeTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="setUp" classname="hometest.Delta_AirlineHomeTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="setUp" classname="hometest.Delta_AirlineHomeTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="startExtent" classname="hometest.Delta_AirlineHomeTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="startExtent" classname="hometest.Delta_AirlineHomeTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="startExtent" classname="hometest.Delta_AirlineHomeTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="startExtent" classname="hometest.Delta_AirlineHomeTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="testCheckFlightStatus" classname="hometest.Delta_AirlineHomeTest" time="0">
+    <skipped message="session not created: This version of ChromeDriver only supports Chrome version 84&#10;Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;&#10;System info: host: &apos;kahinas-MBP.fios-router.home&apos;, ip: &apos;fe80:0:0:0:49c:cb56:ec61:ff8f%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.15.4&apos;, java.version: &apos;13.0.2&apos;&#10;Driver info: driver.version: ChromeDriver&#10;remote stacktrace: 0   chromedriver                        0x000000010dcc2c49 chromedriver + 4893769&#10;1   chromedriver                        0x000000010dc5c0e3 chromedriver + 4473059&#10;2   chromedriver                        0x000000010d8cf8fd chromedriver + 751869&#10;3   chromedriver                        0x000000010d8313b9 chromedriver + 103353&#10;4   chromedriver                        0x000000010d82d696 chromedriver + 87702&#10;5   chromedriver                        0x000000010d82a9b9 chromedriver + 76217&#10;6   chromedriver                        0x000000010d85d043 chromedriver + 282691&#10;7   chromedriver                        0x000000010d859e43 chromedriver + 269891&#10;8   chromedriver                        0x000000010d83362a chromedriver + 112170&#10;9   chromedriver                        0x000000010d834635 chromedriver + 116277&#10;10  chromedriver                        0x000000010dc845af chromedriver + 4638127&#10;11  chromedriver                        0x000000010dc9191b chromedriver + 4692251&#10;12  chromedriver                        0x000000010dc916bb chromedriver + 4691643&#10;13  chromedriver                        0x000000010dc68109 chromedriver + 4522249&#10;14  chromedriver                        0x000000010dc91ea3 chromedriver + 4693667&#10;15  chromedriver                        0x000000010dc7a073 chromedriver + 4595827&#10;16  chromedriver                        0x000000010dca9094 chromedriver + 4788372&#10;17  chromedriver                        0x000000010dcc8db7 chromedriver + 4918711&#10;18  libsystem_pthread.dylib             0x00007fff6b4c6109 _pthread_start + 148&#10;19  libsystem_pthread.dylib             0x00007fff6b4c1b8b thread_start + 15&#10;"/>
+  </testcase>
+  <testcase name="afterEachTestMethod" classname="hometest.Delta_AirlineHomeTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="afterEachTestMethod" classname="hometest.Delta_AirlineHomeTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="afterEachTestMethod" classname="hometest.Delta_AirlineHomeTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="afterEachTestMethod" classname="hometest.Delta_AirlineHomeTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="cleanUp" classname="hometest.Delta_AirlineHomeTest" time="0.001">
+    <failure type="java.lang.NullPointerException"><![CDATA[java.lang.NullPointerException
+]]></failure>
+  </testcase>
+  <testcase name="cleanUp" classname="hometest.Delta_AirlineHomeTest" time="0.001">
+    <failure type="java.lang.NullPointerException"><![CDATA[java.lang.NullPointerException
+]]></failure>
+  </testcase>
+  <testcase name="cleanUp" classname="hometest.Delta_AirlineHomeTest" time="0.001">
+    <failure type="java.lang.NullPointerException"><![CDATA[java.lang.NullPointerException
+]]></failure>
+  </testcase>
+  <testcase name="cleanUp" classname="hometest.Delta_AirlineHomeTest" time="0.002">
+    <failure type="java.lang.NullPointerException"><![CDATA[java.lang.NullPointerException
+]]></failure>
+  </testcase>
+  <testcase name="testCheckNotifications" classname="hometest.Delta_AirlineHomeTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="testDeltaCarriersSearchPage" classname="hometest.Delta_AirlineHomeTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="testSearchButton" classname="hometest.Delta_AirlineHomeTest" time="0">
+    <skipped/>
+  </testcase>
 </testsuite>
