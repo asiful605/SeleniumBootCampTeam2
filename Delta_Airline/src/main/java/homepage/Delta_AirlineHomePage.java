@@ -1,19 +1,11 @@
 package homepage;
 
-<<<<<<< HEAD
-=======
-import WebElements.Delta_airlineHomePageWebElements;
->>>>>>> 339101e872bdcb6331b72cf93d34d2388c57d76d
+
 import common.WebAPI;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
-<<<<<<< HEAD
-=======
-import java.io.IOException;
-
->>>>>>> 339101e872bdcb6331b72cf93d34d2388c57d76d
 import static WebElements.Delta_airlineHomePageWebElements.*;
 
 public class Delta_AirlineHomePage extends WebAPI {
