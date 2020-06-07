@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\asifu\IdeaProjects\New folder\SeleniumBootCampTeam2\BankOfAmerica\src\main\java\wealthManagement\WealthManagementPage.java
 C:\Users\asifu\IdeaProjects\New folder\SeleniumBootCampTeam2\BankOfAmerica\src\main\java\searchBoxHome\SearchBox.java
 C:\Users\asifu\IdeaProjects\New folder\SeleniumBootCampTeam2\BankOfAmerica\src\main\java\feedback\ContactUsCommentCard.java
@@ -10,3 +11,6 @@ C:\Users\asifu\IdeaProjects\New folder\SeleniumBootCampTeam2\BankOfAmerica\src\m
 C:\Users\asifu\IdeaProjects\New folder\SeleniumBootCampTeam2\BankOfAmerica\src\main\java\videoPageSmallBusiness\SmallBusinessVideo.java
 C:\Users\asifu\IdeaProjects\New folder\SeleniumBootCampTeam2\BankOfAmerica\src\main\java\homepage\BoaHomeHiddenFeatures.java
 C:\Users\asifu\IdeaProjects\New folder\SeleniumBootCampTeam2\BankOfAmerica\src\main\java\smallBusinessPage\SbPage.java
+=======
+/Users/kahinaayouni/IdeaProjects/SeleniumBootCampTeam2/BankOfAmerica/src/main/java/homepage/BankOfAmericaHomePage.java
+>>>>>>> 339101e872bdcb6331b72cf93d34d2388c57d76d
