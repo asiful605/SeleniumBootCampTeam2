@@ -10,7 +10,6 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>Generic</module>
-        <module>Amazon</module>
         <module>HBO</module>
         <module>at_t</module>
         <module>GEICO</module>
@@ -18,6 +17,7 @@
         <module>BankOfAmerica</module>
         <module>Expedia</module>
         <module>Delta_Airline</module>
+        <module>Ebay</module>
     </modules>
 
 
@@ -144,6 +144,7 @@
                         <!-- <suiteXmlFiles>target/test-classes/AmazonTestRunner.xml</suiteXmlFiles>-->
                         <!--<suiteXmlFiles>target/test-classes/CNNTestRunner.xml</suiteXmlFiles>  -->
                         <!--<suiteXmlFiles>target/test-classes/BBCTestRunner.xml</suiteXmlFiles>  -->
+                        <suiteXmlFiles>target/test-classes/Delta_AirlineTestRunner.xml</suiteXmlFiles>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>

@@ -101,8 +101,8 @@ public class WebAPI {
 
     //Browser SetUp
     public static WebDriver driver = null;
-    public String browserstack_username = "mhshahib1";
-    public String browserstack_accesskey = "YA4xsqrMqFurrGduX1X9";
+    public String browserstack_username = "kahinachafai1";
+    public String browserstack_accesskey = "B8GCh6kyYSxRbGv1xJCM";
     public String saucelabs_username = "";
     public String saucelabs_accesskey = "";
 
@@ -131,7 +131,9 @@ public class WebAPI {
 
         if (browserName.equalsIgnoreCase("chrome")) {
             if (OS.equalsIgnoreCase("OS X")) {
-                System.setProperty("webdriver.chrome.driver", "../Generic/BrowserDriver/mac/chromedriver");
+                System.setProperty("webdriver.chrome.driver", "..Generic/BrowserDriver/windows/chromedriver.exe");
+                //System.setProperty("webdriver.chrome.driver","/Users/kahinaayouni/IdeaProjects/SeleniumBootCampTeam2/Generic/BrowserDriver/mac/chromedriver");
+
             } else if (OS.equalsIgnoreCase("Windows")) {
                 System.setProperty("webdriver.chrome.driver", "../Generic/BrowserDriver/windows/chromedriver.exe");
             }
@@ -147,7 +149,7 @@ public class WebAPI {
             driver = new ChromeDriver(options);
         } else if (browserName.equalsIgnoreCase("firefox")) {
             if (OS.equalsIgnoreCase("OS X")) {
-                System.setProperty("webdriver.gecko.driver", "../Generic/BrowserDriver/mac/geckodriver");
+                System.setProperty("webdriver.gecko.driver", "../Generic/BrowserDriver/mac/chromedriver");
             } else if (OS.equalsIgnoreCase("Windows")) {
                 System.setProperty("webdriver.gecko.driver", "../Generic/BrowserDriver/windows/geckodriver.exe");
             }

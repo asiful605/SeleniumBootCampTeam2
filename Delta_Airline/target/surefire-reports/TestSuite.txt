@@ -1,0 +1,44 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 20, Failures: 5, Errors: 0, Skipped: 15, Time elapsed: 3.349 s <<< FAILURE! - in TestSuite
+hometest.Delta_AirlineHomeTest.setUp  Time elapsed: 2.966 s  <<< FAILURE!
+org.openqa.selenium.SessionNotCreatedException: 
+session not created: This version of ChromeDriver only supports Chrome version 84
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'kahinas-MBP.fios-router.home', ip: 'fe80:0:0:0:49c:cb56:ec61:ff8f%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.4', java.version: '13.0.2'
+Driver info: driver.version: ChromeDriver
+remote stacktrace: 0   chromedriver                        0x000000010dcc2c49 chromedriver + 4893769
+1   chromedriver                        0x000000010dc5c0e3 chromedriver + 4473059
+2   chromedriver                        0x000000010d8cf8fd chromedriver + 751869
+3   chromedriver                        0x000000010d8313b9 chromedriver + 103353
+4   chromedriver                        0x000000010d82d696 chromedriver + 87702
+5   chromedriver                        0x000000010d82a9b9 chromedriver + 76217
+6   chromedriver                        0x000000010d85d043 chromedriver + 282691
+7   chromedriver                        0x000000010d859e43 chromedriver + 269891
+8   chromedriver                        0x000000010d83362a chromedriver + 112170
+9   chromedriver                        0x000000010d834635 chromedriver + 116277
+10  chromedriver                        0x000000010dc845af chromedriver + 4638127
+11  chromedriver                        0x000000010dc9191b chromedriver + 4692251
+12  chromedriver                        0x000000010dc916bb chromedriver + 4691643
+13  chromedriver                        0x000000010dc68109 chromedriver + 4522249
+14  chromedriver                        0x000000010dc91ea3 chromedriver + 4693667
+15  chromedriver                        0x000000010dc7a073 chromedriver + 4595827
+16  chromedriver                        0x000000010dca9094 chromedriver + 4788372
+17  chromedriver                        0x000000010dcc8db7 chromedriver + 4918711
+18  libsystem_pthread.dylib             0x00007fff6b4c6109 _pthread_start + 148
+19  libsystem_pthread.dylib             0x00007fff6b4c1b8b thread_start + 15
+
+
+hometest.Delta_AirlineHomeTest.cleanUp  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.NullPointerException
+
+hometest.Delta_AirlineHomeTest.cleanUp  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.NullPointerException
+
+hometest.Delta_AirlineHomeTest.cleanUp  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.NullPointerException
+
+hometest.Delta_AirlineHomeTest.cleanUp  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.NullPointerException
+

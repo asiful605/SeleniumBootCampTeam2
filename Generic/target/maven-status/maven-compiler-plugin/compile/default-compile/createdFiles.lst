@@ -1,9 +1,29 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
 databases\User.class
 reporting\ExtentManager.class
 reporting\ExtentTestManager.class
 reporting\ApplicationLog.class
 databases\Student.class
 reporting\TestLogger.class
+utility\DataReader.class
 databases\ConnectToMongoDB.class
 common\WebAPI.class
 databases\ConnectToSqlDB.class
+=======
+=======
+>>>>>>> 339101e872bdcb6331b72cf93d34d2388c57d76d
+reporting/ExtentManager.class
+common/WebAPI.class
+databases/ConnectToMongoDB.class
+databases/Student.class
+reporting/ApplicationLog.class
+reporting/ExtentTestManager.class
+utility/DataReader.class
+reporting/TestLogger.class
+databases/User.class
+databases/ConnectToSqlDB.class
+<<<<<<< HEAD
+>>>>>>> 339101e872bdcb6331b72cf93d34d2388c57d76d
+=======
+>>>>>>> 339101e872bdcb6331b72cf93d34d2388c57d76d
