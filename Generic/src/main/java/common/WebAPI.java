@@ -101,8 +101,8 @@ public class WebAPI {
 
     //Browser SetUp
     public static WebDriver driver = null;
-    public String browserstack_username = "asifulzahid1";
-    public String browserstack_accesskey = "gSPrV8n4sm6rYQsmxxxU";
+    public String browserstack_username = "kahinachafai1";
+    public String browserstack_accesskey = "B8GCh6kyYSxRbGv1xJCM";
     public String saucelabs_username = "";
     public String saucelabs_accesskey = "";
 
@@ -131,11 +131,11 @@ public class WebAPI {
 
         if (browserName.equalsIgnoreCase("chrome")) {
             if (OS.equalsIgnoreCase("OS X")) {
-                System.setProperty("webdriver.chrome.driver", "../Generic/BrowserDriver/mac/chromedriver");
+                System.setProperty("webdriver.chrome.driver", "..Generic/BrowserDriver/windows/chromedriver.exe");
                 //System.setProperty("webdriver.chrome.driver","/Users/kahinaayouni/IdeaProjects/SeleniumBootCampTeam2/Generic/BrowserDriver/mac/chromedriver");
 
             } else if (OS.equalsIgnoreCase("Windows")) {
-                System.setProperty("webdriver.chrome.driver", "../Generic/BrowserDriver/windows/chromedriver1.exe");
+                System.setProperty("webdriver.chrome.driver", "../Generic/BrowserDriver/windows/chromedriver.exe");
             }
             driver = new ChromeDriver();
         } else if (browserName.equalsIgnoreCase("chrome-options")) {

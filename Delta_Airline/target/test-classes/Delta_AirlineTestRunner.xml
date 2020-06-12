@@ -22,10 +22,7 @@
         <classes>
             <class name="hometest.Delta_AirlineHomeTest"></class>
 
-
-
-
-
+            
         </classes>
 
     </test>
