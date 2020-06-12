@@ -6,7 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
-import static webelements.Webelements.searchbox;
+import static webelements.at_tWebelements.searchbox;
+
 //first extend the WebAPI
 public class at_tHomePage extends WebAPI {
     // using Findbyannotation which is under selinium
