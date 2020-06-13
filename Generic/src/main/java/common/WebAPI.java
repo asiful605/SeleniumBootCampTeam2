@@ -28,7 +28,6 @@ import java.io.StringWriter;
 import java.lang.reflect.Method;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -64,7 +63,7 @@ public class WebAPI {
     }
 
     @AfterMethod
-    public void afterEachTestMethod(ITestResult result) {
+    public void afterEachTestMethod(ITestResult result) throws IOException {
         ExtentTestManager.getTest().getTest().setStartedTime(getTime(result.getStartMillis()));
         ExtentTestManager.getTest().getTest().setEndedTime(getTime(result.getEndMillis()));
 
@@ -101,8 +100,8 @@ public class WebAPI {
 
     //Browser SetUp
     public static WebDriver driver = null;
-    public String browserstack_username = "kahinachafai1";
-    public String browserstack_accesskey = "B8GCh6kyYSxRbGv1xJCM";
+    public String browserstack_username = "asifulzahid1";
+    public String browserstack_accesskey = "gSPrV8n4sm6rYQsmxxxU";
     public String saucelabs_username = "";
     public String saucelabs_accesskey = "";
 
@@ -131,9 +130,7 @@ public class WebAPI {
 
         if (browserName.equalsIgnoreCase("chrome")) {
             if (OS.equalsIgnoreCase("OS X")) {
-                System.setProperty("webdriver.chrome.driver", "..Generic/BrowserDriver/windows/chromedriver.exe");
-                //System.setProperty("webdriver.chrome.driver","/Users/kahinaayouni/IdeaProjects/SeleniumBootCampTeam2/Generic/BrowserDriver/mac/chromedriver");
-
+                System.setProperty("webdriver.chrome.driver", "../Generic/BrowserDriver/mac/chromedriver");
             } else if (OS.equalsIgnoreCase("Windows")) {
                 System.setProperty("webdriver.chrome.driver", "../Generic/BrowserDriver/windows/chromedriver.exe");
             }
@@ -278,19 +275,46 @@ public class WebAPI {
         driver.getTitle();
     }
 
-    public static void captureScreenshot(WebDriver driver, String screenshotName) {
-        DateFormat df = new SimpleDateFormat("(MM.dd.yyyy-HH:mma)");
-        Date date = new Date();
-        df.format(date);
+    public static String captureScreenshot(WebDriver driver, String screenshotName) throws IOException {
+//        DateFormat df = new SimpleDateFormat("(MM-dd-yyyy-HH:mma)");
+//        Date date = new Date();
+//
+//        System.setProperty("current.date",date.toString().replace(" ","_").replace(":","_"));
+//        df.format(date);
+//        //Date d = new Date();
+//
+//
+//        File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+//        try {
+//            FileUtils.copyFile(file,
+//                    new File(System.getProperty("user.dir") + "/Screenshots/" + screenshotName + " " + df.format(date) + ".png"));
+//            System.out.println("Screenshot captured");
+//        } catch (Exception e) {
+//            System.out.println("Exception while taking screenshot " + e.getMessage());
+//        }
 
-        File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        try {
-            FileUtils.copyFile(file,
-                    new File(System.getProperty("user.dir") + "/Screenshots/" + screenshotName + " " + df.format(date) + ".png"));
-            System.out.println("Screenshot captured");
-        } catch (Exception e) {
-            System.out.println("Exception while taking screenshot " + e.getMessage());
-        }
+
+        //create a string variable which will be unique always
+        String df = new SimpleDateFormat("yyyyMMddhhss").format(new Date());
+
+        //create object variable of TakeScreenshot class
+        TakesScreenshot ts = (TakesScreenshot)driver;
+
+        //create File object variable which holds the screen shot reference
+        File source = ts.getScreenshotAs(OutputType.FILE);
+
+        //store the screen shot path in path variable. Here we are storing the screenshots under screenshots folder
+        String path = System.getProperty("user.dir") + "/Screenshots/" + screenshotName + df + ".png";
+
+        //create another File object variable which points(refer) to the above stored path variable
+        File destination = new File(path);
+
+        //use FileUtils class method to save the screen shot at desired path
+        FileUtils.copyFile(source, destination);
+
+        //return the path where the screen shot is saved
+        return path;
+
 
     }
 
