@@ -9,13 +9,10 @@ public class at_tHomeTest extends WebAPI {
     //created vairable of at_thomepage
     static at_tHomePage mainhomepage;
     //webelement initialization
-
     //create page factory class ad driver and call the at_thomePage
     public void getInitElements() {
         mainhomepage = PageFactory.initElements(driver, at_tHomePage.class);
     }
-
-
 
     // to count test case
     @Test(priority = 1)
@@ -23,9 +20,8 @@ public class at_tHomeTest extends WebAPI {
         driver.manage().window().maximize();
         getInitElements();
         mainhomepage.usersearchbox();
-        Thread.sleep(5000);
+
     }
-//
     @Test(priority = 2)
     public void testsearchclickbutton() throws InterruptedException {
         driver.manage().window().maximize();
@@ -34,13 +30,12 @@ public class at_tHomeTest extends WebAPI {
         mainhomepage.searchclickbutton();
         Thread.sleep(3000);
     }
-//
       @Test (priority = 3)
       public void testscroll() throws InterruptedException {
         driver.manage().window().maximize();
         getInitElements();
         mainhomepage.scrolldownwebpage();
-        Thread.sleep(5000);
+        Thread.sleep(3000);
     }
       @Test (priority = 4)
       public void testscrolltoend() throws InterruptedException {
@@ -49,14 +44,12 @@ public class at_tHomeTest extends WebAPI {
         getInitElements();
         mainhomepage.scrolltoend();
     }
-//
       @Test(priority = 5)
       public void testclickaccountlogin(){
         driver.manage().window().maximize();
         getInitElements();
         mainhomepage.clickaccountlogin();
     }
-
       @Test(priority = 6)
       public void testiphoneimage() throws InterruptedException {
           driver.manage().window().maximize();
@@ -65,16 +58,14 @@ public class at_tHomeTest extends WebAPI {
           Thread.sleep(3000);
 
       }
-
-      @Test(priority = 7)// not working
+      @Test(priority = 7)
       public void testpricingoption() throws InterruptedException {
           driver.get("https://www.att.com/buy/phones/apple-iphone-11-64gb-purple.html?offerid=13700004");
           driver.manage().window().maximize();
           getInitElements();
-//          mainhomepage.clickoniphoneimage();
+          //mainhomepage.clickoniphoneimage();
           mainhomepage.selectpricingoption();
           Thread.sleep(3000);
-
      }
      @Test(priority = 8)
      public void testhoveringOnMenuElement() throws InterruptedException {
@@ -87,13 +78,10 @@ public class at_tHomeTest extends WebAPI {
      public void testUserclickOnImageelement(){ getInitElements();
      mainhomepage.UserclickOnImageelement();
      }
-
      //handle PopUp Window
-
-      @Test(priority = 10)
+     @Test(priority = 10)
       public void testUserhandleAlert(){
       getInitElements();
       mainhomepage.handleAlert();
       }
-
 }
