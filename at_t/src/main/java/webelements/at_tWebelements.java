@@ -17,6 +17,6 @@ public class at_tWebelements {
     public static final String popUpElement= "a[class='btn-large btn btn-primary-2 btn-arrow mar-t-xs']";
     public static final String accountElement="span[id='z1-profile-text']";
     public static final String clickOnDropButton="#pricing-options-button" ;
-    public static final String prcUrl="https://www.att.com/buy/phones/apple-iphone-se-2020-256gb-white.html?offerid=13700010";
+
 
 }

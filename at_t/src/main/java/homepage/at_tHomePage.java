@@ -10,16 +10,13 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-
 import java.util.concurrent.TimeUnit;
-
 import static webelements.at_tWebelements.*;
 
 //first extend the WebAPI
 public class at_tHomePage extends WebAPI {
     // using Findbyannotation which is under selinium
     // must import Webelements
-
 
     @FindBy(how = How.CSS, using = searchbox )
     WebElement usersearchbox;
@@ -46,11 +43,6 @@ public class at_tHomePage extends WebAPI {
     @FindBy(how=How.CSS,using=clickOnDropButton)
     WebElement dropButtonWebElement;
 
-
-
-    //initialize and import webelements
-
-
     // created a method for searchbox
     public void usersearchbox(){
        driver.get(url);
@@ -59,12 +51,10 @@ public class at_tHomePage extends WebAPI {
     public void searchclickbutton(){
         clickonsearchbutton.click();
     }
-
     //Scrolldownwebpage
     public void scrolldownwebpage(){
         JavascriptExecutor scroll = (JavascriptExecutor)driver;
         scroll.executeScript("window.scrollBy(0, 2000)");
-
     }
     //ScrolltoEnd
     public void scrolltoend() throws InterruptedException {
@@ -72,17 +62,14 @@ public class at_tHomePage extends WebAPI {
         scrollend.executeScript("window.scrollTo(10, document.body.scrollHeight");
     //  driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         Thread.sleep(2000);
-
     }
     // accountlog in
     public void clickaccountlogin() {
         useraccountlogin.click();
-
     }
     //clickoniphoneimage
     public void clickoniphoneimage() {
         webelementofiphoneimage.click();
-
     }
     //iphonepricing option
     public void selectpricingoption(){
@@ -90,13 +77,8 @@ public class at_tHomePage extends WebAPI {
         webElementpricingoptions.click();
         Select prcoption = new Select(driver.findElement(By.xpath(pricingoptions)));
         prcoption.selectByIndex(1);
-
     }
-
-    // get subMenu item from MenuTab By mouse hovering
-
     public void hoveringOnMenuElement() throws InterruptedException {
-
         driver.get(url);
         driver.manage().window().maximize();
         Actions actions =new Actions(driver);
@@ -107,17 +89,15 @@ public class at_tHomePage extends WebAPI {
         Thread.sleep(3000);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
-
     // Click on Image
     public void UserclickOnImageelement(){
         driver.get(forDealsUrl);
         clickOnImageelement.click();
         String title= driver.getTitle();
         System.out.println(title);
-     // For validating
+        // For validating
         Assert.assertEquals(driver.getTitle(),driver.getTitle());
     }
-
     // Web Based PopUp
     public void handleAlert(){
         driver.get(prepaidUrl);
@@ -125,6 +105,4 @@ public class at_tHomePage extends WebAPI {
         Alert alt =driver.switchTo().alert();
         alt.accept();
     }
-
-
 }
