@@ -1,12 +1,17 @@
 package homepage;
 
 import common.WebAPI;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
+
+import java.util.concurrent.TimeUnit;
 
 import static webelements.at_tWebelements.*;
 
@@ -26,6 +31,20 @@ public class at_tHomePage extends WebAPI {
     WebElement webelementofiphoneimage;
     @FindBy(how = How.CSS, using = pricingoptions)
     WebElement webElementpricingoptions;
+    @FindBy(how= How.CSS,using = hoverOnMenu)
+    WebElement MenuElement;
+    @FindBy(how=How.XPATH,using=InternetElement)
+    WebElement netElement;
+    @FindBy(how=How.XPATH,using=ExploretElement)
+    WebElement ExploreNetElement;
+    @FindBy(how=How.CSS,using=imageElement)
+    WebElement clickOnImageelement;
+    @FindBy(how=How.CSS,using=popUpElement)
+    WebElement PopUpWebElement;
+    @FindBy(how=How.CSS,using=accountElement)
+    WebElement accountWebElement;
+    @FindBy(how=How.CSS,using=clickOnDropButton)
+    WebElement dropButtonWebElement;
 
 
 
@@ -73,5 +92,39 @@ public class at_tHomePage extends WebAPI {
         prcoption.selectByIndex(1);
 
     }
+
+    // get subMenu item from MenuTab By mouse hovering
+
+    public void hoveringOnMenuElement() throws InterruptedException {
+
+        driver.get(url);
+        driver.manage().window().maximize();
+        Actions actions =new Actions(driver);
+        actions.moveToElement(MenuElement).perform();
+        actions.moveToElement(netElement).click().perform();
+        Thread.sleep(3000);
+        actions.moveToElement(ExploreNetElement).click();
+        Thread.sleep(3000);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    }
+
+    // Click on Image
+    public void UserclickOnImageelement(){
+        driver.get(forDealsUrl);
+        clickOnImageelement.click();
+        String title= driver.getTitle();
+        System.out.println(title);
+     // For validating
+        Assert.assertEquals(driver.getTitle(),driver.getTitle());
+    }
+
+    // Web Based PopUp
+    public void handleAlert(){
+        driver.get(prepaidUrl);
+        driver.manage().window().maximize();
+        Alert alt =driver.switchTo().alert();
+        alt.accept();
+    }
+
 
 }
