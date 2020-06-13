@@ -17,4 +17,13 @@ public class Delta_airlineHomePageWebElements {
     public static final String suggestionWebElements="navPrimary";
     public static final String menuOptionWebElements="More >";
     public static final String mouseHoverWebElement="headSectab1";
+    public static final String fbLogoWebElement="//a[@id='footer-facebook']";
+    public static final String getAlertWebElement="//a[@class='btn-extsite btn btn-danger rounded-0']";
+    public static final String bookFlightWebElement="//div[7]//div[1]//div[1]//div[1]//div[2]";
+    public static final String checkBoxWebElement="//label[contains(text(),'Shop with Miles')]";
+    public static final String deltaLogoWebElement="//img[@class='siteLogo']";
+    public static final String homePageWebElement="//div[@id='booking']";
+
+
+
 }

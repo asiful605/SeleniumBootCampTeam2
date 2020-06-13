@@ -29,18 +29,20 @@ public class Delta_AirlineHomePage extends WebAPI {
     @FindBy(how = How.CSS, using = suggestionWebElements) public List<WebElement> suggestion;
     @FindBy(how=How.LINK_TEXT, using= menuOptionWebElements) public WebElement menuOption;
     @FindBy(how=How.ID, using= mouseHoverWebElement) public WebElement mouseHover;
+    @FindBy(how=How.XPATH, using= fbLogoWebElement) public WebElement fbLogo;
+    @FindBy(how=How.XPATH, using= getAlertWebElement) public WebElement getAlert;
+    @FindBy(how=How.XPATH, using= bookFlightWebElement) public WebElement bookFlight;
+    @FindBy(how=How.XPATH, using= checkBoxWebElement) public WebElement checkBox;
+    @FindBy(how=How.XPATH, using= deltaLogoWebElement) public WebElement deltaLogo;
+    @FindBy(how=How.XPATH, using= homePageWebElement) public WebElement homePage;
 
-    public void clickHandleCookies() {
-        handleCookies.click();}
-
+    public void clickHandleCookies() { handleCookies.click();}
     public void clickCarriesButton() {
         carriesButton.click();
     }
-
     public void clickSearchDeltaCarries() {
         searchDeltaCarries.click();
     }
-
     public void clickNotificationButton() {
         notificationsButton.click();
     }
@@ -53,15 +55,9 @@ public class Delta_AirlineHomePage extends WebAPI {
     public void enterKeyWord(String keyWord) {
         searchBox.sendKeys(keyWord);
     }
-    public void clickSearchButton() {
-        searchButton.click();
-    }
-    public void clickSearchInput() {
-        searchInput.click();
-    }
-    public void inputKeyWord(String keyword) {
-        keywordInput.sendKeys(keyword);
-    }
+    public void clickSearchButton() { searchButton.click(); }
+    public void clickSearchInput() { searchInput.click(); }
+    public void inputKeyWord(String keyword) { keywordInput.sendKeys(keyword); }
     public List<WebElement> useGetText() {
         List<WebElement> suggestion1 = suggestion;
         for (WebElement suggest : suggestion1) {
@@ -70,6 +66,19 @@ public class Delta_AirlineHomePage extends WebAPI {
         return suggestion1;
     }
     public void clickMenuOption(){menuOption.click();}
+    public void clickFbLogo(){fbLogo.click();}
+    public void alert(){getAlert.click();}
+    public void selectBookFlight(){bookFlight.click();}
+    public void selectCheckBox(){ checkBox.click();}
+    public void inspectDeltaLogo(){ deltaLogo.click();}
+    public void verifyHomePage(){
+        if (driver.getTitle().equals(homePage)) {
+            System.out.println("We are back at Delta homepage");
+        } else {
+            System.out.println("We are NOT in Delta homepage");
+        }
+        driver.close();
+    }
     public void performMouseHover() throws InterruptedException {
         Actions action= new Actions(driver);
         WebElement travel= mouseHover;
@@ -117,6 +126,22 @@ public class Delta_AirlineHomePage extends WebAPI {
         clickMenuOption();
         sleepFor(2);
         performMouseHover();
+    }
+    public void handleAlertPage(){
+        clickHandleCookies();
+        driver.manage().deleteAllCookies();
+        clickFbLogo();
+        alert();
+    }
+    public void useCheckBoxButton(){
+        clickHandleCookies();
+        selectBookFlight();
+        selectCheckBox();
+    }
+    public void readDeltaLogoImage(){
+        clickHandleCookies();
+        inspectDeltaLogo();
+        verifyHomePage();
     }
 
 }
