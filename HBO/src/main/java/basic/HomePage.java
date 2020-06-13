@@ -1,8 +1,6 @@
 package basic;
-import Util.TestLogger;
-import base.WebAPI;
+
 import common.WebAPI;
-//import database.XlsxDataReader;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -148,7 +146,7 @@ public class HomePage extends WebAPI {
         return list;
     }
 
-    XlsxDataReader xlData = new XlsxDataReader("C:\\Users\\Rob Dos\\Desktop\\Robin\\The-A-Team\\HBO\\src\\test\\HomePageHBO.xlsx");
+    XlsxDataReader xlData = new XlsxDataReader("src/main/java/basic/ReadXlsx.java");
     public List expectedWebElement(){
         int rowcount = xlData.getRowCount("Sheet1");
         List<String> expect = new ArrayList<>();

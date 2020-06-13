@@ -1,13 +1,11 @@
 package web;
 
-import base.CommonAPI;
+//import base.CommonAPI;
 import basic.HomePage;
 import common.WebAPI;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import java.util.List;
 
 
 public class TestHome extends WebAPI {

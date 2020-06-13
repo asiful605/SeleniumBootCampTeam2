@@ -1,12 +1,5 @@
 package search;
-import base.CommonAPI;
 import common.WebAPI;
-import database.XlsxDataReader;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
-import java.util.ArrayList;
-import java.util.List;
 
 public class MyDataReader extends WebAPI {
  /*

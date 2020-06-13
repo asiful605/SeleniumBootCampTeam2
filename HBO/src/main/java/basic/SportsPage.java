@@ -1,9 +1,9 @@
 package basic;
-import Util.TestLogger;
-import base.WebAPI;
+
 import common.WebAPI;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import reporting.TestLogger;
 
 
 public class SportsPage extends WebAPI {

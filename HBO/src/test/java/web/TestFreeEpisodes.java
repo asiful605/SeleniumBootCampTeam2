@@ -14,19 +14,6 @@ public class TestFreeEpisodes extends AllFreeEpisodes{
     @Test
     public void navigateToFreeEpisodes(){free.getFreeEpisodes();}
     @Test
-    public void watchSoprano(){
-        free.getFreeEpisodes();
-        free.getWatchSopranos();
-        try {
-            sleepFor(3);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        free.getPlaySopranos();
-        free.getInputEmail();
-        free.getPressPlay();
-    }
-    @Test
     public void watchTheIceBox(){
         free.getFreeEpisodes();
         //js.executeScript("arguments[0].scrollIntoView();", theIceBox);

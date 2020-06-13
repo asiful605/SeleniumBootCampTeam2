@@ -132,9 +132,9 @@ public class WebAPI {
         if (browserName.equalsIgnoreCase("chrome")) {
             if (OS.equalsIgnoreCase("OS X")) {
 
-                System.setProperty("webdriver.chrome.driver", "..BrowserDriver/mac/chromedriver 8");
+                System.setProperty("webdriver.chrome.driver", "../Generic/BrowserDriver/mac/chromedriver 8");
 
-                System.setProperty("webdriver.chrome.driver", "..Generic/BrowserDriver/windows/chromedriver.exe");
+//                System.setProperty("webdriver.chrome.driver", "..Generic/BrowserDriver/windows/chromedriver.exe");
                 //System.setProperty("webdriver.chrome.driver","/Users/kahinaayouni/IdeaProjects/SeleniumBootCampTeam2/Generic/BrowserDriver/mac/chromedriver");
 
 
@@ -146,7 +146,7 @@ public class WebAPI {
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--disable-notifications");
             if (OS.equalsIgnoreCase("OS X")) {
-                System.setProperty("webdriver.chrome.driver", "..BrowserDriver/mac/chromedriver 8");
+                System.setProperty("webdriver.chrome.driver", "../Generic/BrowserDriver/mac/chromedriver");
             } else if (OS.equalsIgnoreCase("Windows")) {
                 System.setProperty("webdriver.chrome.driver", "../Generic/BrowserDriver/windows/chromedriver.exe");
             }

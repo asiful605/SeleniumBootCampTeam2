@@ -1,6 +1,5 @@
 package web;
-import base.CommonAPI;
-import basic.HomePage;
+//import base.CommonAPI;
 import basic.ReadXlsx;
 import common.WebAPI;
 import org.openqa.selenium.support.PageFactory;
@@ -13,7 +12,17 @@ import java.util.List;
 public class TestReadXlsx extends WebAPI {
 
 
-
+    ReadXlsx read;
+    @BeforeMethod
+    public void initializeElement () {
+        read= PageFactory.initElements(driver, ReadXlsx.class);
+    }
+    @Test
+    public void webElementName(){
+        List actual = read.webElementList();
+        List expected = read.expectedWebElement();
+        Assert.assertEquals(actual,expected);
+    }
 
 
 

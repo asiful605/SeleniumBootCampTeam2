@@ -1,11 +1,12 @@
 package testsearch;
-import base.WebAPI;
+
 import common.WebAPI;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import search.DatabaseOperation;
+
 import java.util.List;
 
 public class TestDB extends WebAPI {

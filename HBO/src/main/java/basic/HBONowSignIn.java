@@ -1,5 +1,4 @@
 package basic;
-import base.WebAPI;
 import common.WebAPI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;

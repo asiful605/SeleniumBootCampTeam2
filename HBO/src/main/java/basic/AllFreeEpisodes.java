@@ -9,11 +9,12 @@ import java.util.List;
 
 public class AllFreeEpisodes extends WebAPI {
 
-    @FindBy (xpath = "/html/body/main/div[1]/div/div/header/div[1]/div/div[3]/ul/li[1]/div/a")
+
+    @FindBy (xpath = "//*[@id=\"root\"]/main/div[2]/header/div[1]/div/div[3]/ul/li[1]/div/a")
     public WebElement freeEpisodes;
 
-    @FindBy(xpath = "/html/body/main/div[2]/div/div/div[1]/div[1]/div[1]/div[2]/h1/a")
-    public WebElement sopranos;
+    @FindBy(xpath = "///*[@id=\"root\"]/main/div[4]/section/div/div/div[1]")
+    public WebElement notesfromthefield ;
 
     @FindBy (xpath = "//div[@class='__player-placeholder-play-button']")
     public WebElement playSopranos;
@@ -101,8 +102,8 @@ public class AllFreeEpisodes extends WebAPI {
         return freeEpisodes;
     }
     public WebElement getWatchSopranos() {
-        sopranos.click();
-        return sopranos;
+        notesfromthefield.click();
+        return notesfromthefield;
     }
     public WebElement getPlaySopranos() {
         playSopranos.click();
@@ -117,7 +118,7 @@ public class AllFreeEpisodes extends WebAPI {
         return playIceBox;
     }
     public WebElement getInputEmail(){
-        inputEmail.sendKeys("roktimrobin@gmail.com");
+        inputEmail.sendKeys("ev@gmail.com");
         return inputEmail;
     }
     public WebElement getPressPlay(){
@@ -214,7 +215,7 @@ public class AllFreeEpisodes extends WebAPI {
     }
     public List list(){
         List<WebElement> webElements = new ArrayList<>();
-        webElements.add(sopranos);
+        webElements.add(notesfromthefield);
         webElements.add(theIceBox);
         webElements.add(westWorld);
         webElements.add(barry);
@@ -237,7 +238,7 @@ public class AllFreeEpisodes extends WebAPI {
     }
     public List expectedAllFreeEpisodes(){
         List<String> expectedShowsName = new ArrayList<>();
-        expectedShowsName.add("Sopranos");
+        expectedShowsName.add("Notes From The Field");
         expectedShowsName.add("The IceBox");
         expectedShowsName.add("WestWorld");
         expectedShowsName.add("Barry");
@@ -252,18 +253,6 @@ public class AllFreeEpisodes extends WebAPI {
         expectedShowsName.add("Room 104");
         return expectedShowsName;
     }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

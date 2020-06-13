@@ -1,9 +1,9 @@
 package googleSheet;
-import base.CommonAPI;
-import com.google.api.services.sheets.v4.Sheets;
-import com.google.api.services.sheets.v4.model.ValueRange;
+
+//import com.google.api.services.sheets.v4.Sheets;
+//import com.google.api.services.sheets.v4.model.ValueRange;
+
 import common.WebAPI;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
@@ -11,7 +11,8 @@ import org.testng.Assert;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import static googleApi.GoogleSheetReader.getSheetsService;
+
+//import static googleApi.GoogleSheetReader.getSheetsService;
 
 
 public class GoogleSheetsPage extends WebAPI {
@@ -19,7 +20,7 @@ public class GoogleSheetsPage extends WebAPI {
     String spreadsheetId = "1Ul4nRYHWdQ6KUR0U7-VQmy479FKhzdyzAsnrBibqcl8";
     String range = "Sheet1!A1:Z1000";
     // we have to use our own methods
-    @FindBy (xpath = "/html/body/main/div[1]/div/div/header/div[1]/div/div[3]/ul/li[3]/div/span")
+    @FindBy(xpath = "/html/body/main/div[1]/div/div/header/div[1]/div/div[3]/ul/li[3]/div/span")
     public static WebElement signIn;
     @FindBy (xpath = "/html/body/main/div[1]/div/div/header/div[1]/div/div[3]/ul/li[3]/div/div/div[4]/div/div[1]/div[1]/div/a/span")
     public static WebElement hboNowSignIn;
@@ -42,23 +43,26 @@ public class GoogleSheetsPage extends WebAPI {
         password.sendKeys("", Keys.ENTER);*/
     }
 
-    public List<List<Object>> getSpreadSheetRecords() throws IOException {
+    public <Sheets> List<List<Object>> getSpreadSheetRecords() throws IOException {
         // Build a new authorized API client service.
-        Sheets service = getSheetsService();
-        ValueRange response = service.spreadsheets().values().get(spreadsheetId, range).execute();
-        List<List<Object>> values = response.getValues();
-        if (values == null || values.size() == 0) {
+       // Sheets service = getSheetsService();
+        //ValueRange response = service.spreadsheets().values().get(spreadsheetId, range).execute();
+       // List<List<Object>> values = response.getValues();
+       // if (values == null || values.size() == 0) {
             return null;
-        } else {
-            return values;
+       // } else {
+           // return values;
         }
-    }
-    // //ALI_GS_TC1 LogIn by using Google Sheet sheet data
+    //}
+
+
+
+    //ALI_GS_TC1 LogIn by using Google Sheet sheet data
     public List<String> signInByInvalidIdPass() throws IOException, InterruptedException {
 
         List<List<Object>> col2Value = getSpreadSheetRecords();
         List<String> actual = new ArrayList<>();
-        for (List row : col2Value) {
+        for (List<Object> row : col2Value) {
             sleepFor(1);
             inputValueInTextBoxByWebElement(email, row.get(0).toString());
             inputValueInTextBoxByWebElement(password, row.get(1).toString());
@@ -73,6 +77,8 @@ public class GoogleSheetsPage extends WebAPI {
         return actual;
     }
 
+
+
     public String getTextByWebElement(WebElement webElement) {
         String text = webElement.getText();
         return text;
@@ -83,16 +89,6 @@ public class GoogleSheetsPage extends WebAPI {
         List<List<Object>> expectedItems = getSpreadSheetRecords();
         Assert.assertEquals(actualItems,expectedItems);
     }
-
-
-
-
-
-
-
-
-
-
 
 
 }

@@ -1,12 +1,13 @@
 package web;
 import basic.CreateAccount;
+import common.WebAPI;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import java.util.Iterator;
 import java.util.Set;
 
-public class TestCreateAccount extends CreateAccount {
+public class TestCreateAccount extends WebAPI {
     CreateAccount ca;
     @BeforeMethod
     public void initializeElement() {

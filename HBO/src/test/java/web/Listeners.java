@@ -1,12 +1,9 @@
 package web;
-import base.WebAPI;
 import common.WebAPI;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-
-import java.io.IOException;
 
 public class Listeners implements ITestListener{
 
