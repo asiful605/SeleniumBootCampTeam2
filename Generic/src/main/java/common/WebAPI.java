@@ -131,7 +131,6 @@ public class WebAPI {
         if (browserName.equalsIgnoreCase("chrome")) {
             if (OS.equalsIgnoreCase("OS X")) {
                 System.setProperty("webdriver.chrome.driver", "../Generic/BrowserDriver/mac/chromedriver");
-
             } else if (OS.equalsIgnoreCase("Windows")) {
                 System.setProperty("webdriver.chrome.driver", "../Generic/BrowserDriver/windows/chromedriver.exe");
             }
