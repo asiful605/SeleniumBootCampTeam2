@@ -3,7 +3,7 @@
 
 <suite name="Delta_Airline Automation Script" parallel="false">
 
-    <parameter name="useCloudEnv" value="false"/>
+    <parameter name="useCloudEnv" value="true"/>
     <parameter name="cloudEnvName" value="browserstack"/>
     <!--<parameter name="cloudEnvName" value="saucelab"/>-->
         <parameter name="os" value="windows"/>
@@ -14,15 +14,10 @@
     <parameter name="browserVersion" value="83"/>
     <parameter name="url" value="https://www.delta.com/"/>
 
-
-
-
-
+            
     <test name="Delta_AirlineHomePage">
         <classes>
             <class name="hometest.Delta_AirlineHomeTest"></class>
-
-
 
 
 
