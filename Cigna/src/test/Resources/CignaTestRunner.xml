@@ -12,18 +12,12 @@
     <parameter name="os_version" value="Mojave"/>
     <parameter name="browserName" value="chrome"/>
     <parameter name="browserVersion" value="84"/>
-    <parameter name="url" value="https://www.ebay.com"/>
+    <parameter name="url" value="https://www.cigna.com"/>
 
-
-
-
-
-    <test name="EbayHomePage">
+    <test name="CignaHomePage">
         <classes>
-<!--            <class name="hometest.EbayHomeTest"></class>-->
-<!--            <class name="hometest.TestAboutEbay"></class>-->
-<!--            <class name="hometest.EbayHomeLinksTest"></class>-->
-             <class name="hometest.TestHomePageDropDown"></class>
+
+<class name="hometest.CignaHomeTest"></class>
 
 
 
@@ -38,5 +32,3 @@
 
 
 </suite>
-
-

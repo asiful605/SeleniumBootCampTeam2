@@ -21,6 +21,9 @@
     <test name="EbayHomePage">
         <classes>
             <class name="hometest.EbayHomeTest"></class>
+            <class name="hometest.TestAboutEbay"></class>
+            <class name="hometest.EbayHomeLinksTest"></class>
+             <class name="hometest.TestHomePageDropDown"></class>
 
 
 

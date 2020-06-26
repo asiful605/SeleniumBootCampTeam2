@@ -1,11 +1,9 @@
 package hometest;
 
 import common.WebAPI;
-import homepage.Delta_AirlineHomePage;
+import homepage2.Delta_AirlineHomePage;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
-
-import java.io.IOException;
 
 public class Delta_AirlineHomeTest extends WebAPI {
 
