@@ -124,7 +124,6 @@ WebElement clickSubmit;
     @FindBy(xpath = "//*[@id=\"gh-p-1\"]/a")
     WebElement clickDailyDeals;
 
-
     public void clickFashion(){
         fashion.click();
     }
