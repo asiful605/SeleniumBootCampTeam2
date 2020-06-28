@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Automation Script" parallel="false">
+
+    <parameter name="useCloudEnv" value="false"/>
+    <parameter name="cloudEnvName" value="browserstack"/>
+    <!--<parameter name="cloudEnvName" value="saucelab"/>-->
+       <parameter name="os" value="windows"/>
+<!--    <parameter name="os" value="OS X"/>-->
+        <parameter name="os_version" value="10"/>
+<!--    parameter name="os_version" value="10"-->
+    <parameter name="browserName" value="chrome"/>
+    <parameter name="browserVersion" value="83"/>
+    <parameter name="url" value="https://www.bankofamerica.com/"/>
+
+
+
+
+
+    <test name="BoAHomePage">
+        <classes>
+            <class name="testBoA.BoATest"></class>
+            <class name="basicTest.BasicHomePageTest"></class>
+                                   <class name="basicTest.HiddenFeaturesHome"></class>
+            <class name="basicTest.TestSmallBusinessvideo"></class>
+<!--            <class name="testBoA.WealthManagementNavigation"></class>-->
+
+        </classes>
+
+    </test>
+
+
+
+
+</suite>
+

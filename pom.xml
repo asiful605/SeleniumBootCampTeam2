@@ -15,9 +15,9 @@
         <module>GEICO</module>
         <module>Cigna</module>
         <module>BankOfAmerica</module>
-        <module>Expedia</module>
         <module>Delta_Airline</module>
         <module>Ebay</module>
+        <module>TripAdvisor</module>
     </modules>
 
 

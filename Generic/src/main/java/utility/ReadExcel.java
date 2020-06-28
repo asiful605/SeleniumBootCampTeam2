@@ -1,8 +1,6 @@
 package utility;
-
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -13,13 +11,8 @@ public class ReadExcel {
 
     private static final String FILE_NAME = System.getProperty("user.dir") + "/DataTest/TestExcelFile.xlsx";
 
-
-
     /**
      * This method is to read Excel file based on sheet Index Number
-     *
-     *
-     *
      *
      */
     public static void readExcelFile() {
@@ -53,8 +46,6 @@ public class ReadExcel {
         }
 
     }
-
-
 
 
 }

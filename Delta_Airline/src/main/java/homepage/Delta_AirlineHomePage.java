@@ -2,7 +2,6 @@ package homepage;
 
 
 import common.WebAPI;
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -118,4 +117,5 @@ public class Delta_AirlineHomePage extends WebAPI {
         sleepFor(2);
         performMouseHover();
     }
+}
 

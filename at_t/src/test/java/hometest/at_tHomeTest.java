@@ -15,66 +15,78 @@ public class at_tHomeTest extends WebAPI {
         mainhomepage = PageFactory.initElements(driver, at_tHomePage.class);
     }
 
+    //to count test case
+    @Test(priority = 1)
+    public void testusersearchbox() throws InterruptedException {
+        getInitElements();
+        mainhomepage.usersearchbox();
+        Thread.sleep(5000);
+    }
+    @Test(priority = 2)
+    public void testsearchclickbutton() throws InterruptedException {
+        getInitElements();
+        mainhomepage.usersearchbox();
+        mainhomepage.searchclickbutton();
+        Thread.sleep(3000);
+    }
+    @Test (priority = 3)
+    public void testscrolldownwebpage() throws InterruptedException {
+        getInitElements();
+        mainhomepage.scrolldownwebpage();
 
+    }
+    @Test (priority = 4)
+    public void testscrolltoend() throws InterruptedException {
+        getInitElements();
+        mainhomepage.scrolltoend();
+    }
 
-    // to count test case
-//    @Test(priority = 1)
-//    public void testusersearchbox() throws InterruptedException {
-//        driver.manage().window().maximize();
-//        getInitElements();
-//        mainhomepage.usersearchbox();
-//        Thread.sleep(5000);
-//    }
-//
-//    @Test(priority = 2)
-//    public void testsearchclickbutton() throws InterruptedException {
-//        driver.manage().window().maximize();
-//        getInitElements();
-//        mainhomepage.usersearchbox();
-//        mainhomepage.searchclickbutton();
-//        Thread.sleep(3000);
-//    }
-//
-//    @Test (priority = 3)
-//    public void testscroll() throws InterruptedException {
-//        driver.manage().window().maximize();
-//        getInitElements();
-//        mainhomepage.scrolldownwebpage();
-//        Thread.sleep(5000);
-//    }
-//    @Test (priority = 4)
-//    public void testscrolltoend() throws InterruptedException {
-//        driver.get("https://www.att.com/");
-//        driver.manage().window().maximize();
-//        getInitElements();
-//        mainhomepage.scrolltoend();
-//    }
-//
-//    @Test(priority = 5)
-//    public void testclickaccountlogin(){
-//        driver.manage().window().maximize();
-//        getInitElements();
-//        mainhomepage.clickaccountlogin();
-//    }
+    @Test(priority = 5)
+    public void testclickaccountlogin(){
+        getInitElements();
+        mainhomepage.clickaccountlogin();
+    }
 
-//      @Test(priority = 6)
-//      public void testiphoneimage() throws InterruptedException {
-//          driver.manage().window().maximize();
-//          getInitElements();
-//          mainhomepage.clickoniphoneimage();
-//          Thread.sleep(3000);
-//
-//      }
-
-      @Test(priority = 7)// not working
+      @Test(priority = 6)
+      public void testiphoneimage() throws InterruptedException {
+        getInitElements();
+          mainhomepage.clickoniphoneimage();
+          Thread.sleep(3000);
+    }
+    @Test(priority = 7)// not working
     public void testpricingoption() throws InterruptedException {
           driver.get("https://www.att.com/buy/phones/apple-iphone-11-64gb-purple.html?offerid=13700004");
-          driver.manage().window().maximize();
           getInitElements();
-//          mainhomepage.clickoniphoneimage();
+          mainhomepage.clickoniphoneimage();
           mainhomepage.selectpricingoption();
           Thread.sleep(3000);
+    }
+    @Test (priority = 8)
+    public void supportClick() throws InterruptedException {
+        getInitElements();
+        mainhomepage.clickSupport();
+        Thread.sleep(2000);
+    }
+    @Test (priority = 9)
+    public void shopAllOffers() throws InterruptedException {
+        getInitElements();
+        mainhomepage.shopAllOfferClick();
+    }
+    @Test(priority = 10)
+    public void enterAddress() throws InterruptedException {
+        getInitElements();
+        mainhomepage.enteradressfield();
+    }
+    @Test(priority = 11)
+    public void checksubmitdeals() throws InterruptedException {
+        getInitElements();
+        mainhomepage.aaddresscheckbox();
+    }
 
-      }
+
+
+
+
+
 
 }

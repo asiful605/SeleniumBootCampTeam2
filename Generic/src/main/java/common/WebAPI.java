@@ -1,5 +1,4 @@
 package common;
-
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.LogStatus;
 import org.apache.commons.io.FileUtils;
@@ -17,10 +16,10 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
+import org.testng.annotations.Optional;
 import org.testng.annotations.*;
 import reporting.ExtentManager;
 import reporting.ExtentTestManager;
-
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -30,10 +29,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 public class WebAPI {
@@ -122,20 +118,27 @@ public class WebAPI {
             getLocalDriver(os, browserName);
         }
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        //driver.manage().timeouts().pageLoadTimeout(25, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(25, TimeUnit.SECONDS);
         driver.get(url);
-        //driver.manage().window().maximize();
+        driver.manage().window().maximize();
     }
+
+
+    public void scrollDownTillEnd() {
+        JavascriptExecutor js1 = (JavascriptExecutor) driver;
+        js1.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+    }
+
 
     public WebDriver getLocalDriver(@Optional("mac") String OS, String browserName) {
 
         if (browserName.equalsIgnoreCase("chrome")) {
             if (OS.equalsIgnoreCase("OS X")) {
-
+                System.setProperty("webdriver.chrome.driver", "../Generic/BrowserDriver/mac/chromedriver");
                 //System.setProperty("webdriver.chrome.driver","/Users/kahinaayouni/IdeaProjects/SeleniumBootCampTeam2/Generic/BrowserDriver/mac/chromedriver");
 
             } else if (OS.equalsIgnoreCase("Windows")) {
-                System.setProperty("webdriver.chrome.driver", "../Generic/BrowserDriver/windows/chromedriver1.exe");
+                System.setProperty("webdriver.chrome.driver", "../Generic/BrowserDriver/windows/chromedriver.exe");
             }
             driver = new ChromeDriver();
         } else if (browserName.equalsIgnoreCase("chrome-options")) {
@@ -144,7 +147,7 @@ public class WebAPI {
             if (OS.equalsIgnoreCase("OS X")) {
                 System.setProperty("webdriver.chrome.driver", "../Generic/BrowserDriver/mac/chromedriver");
             } else if (OS.equalsIgnoreCase("Windows")) {
-                System.setProperty("webdriver.chrome.driver", "../Generic/BrowserDriver/windows/chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver", "../Generic/BrowserDriver/windows/chromedriver1.exe");
             }
             driver = new ChromeDriver(options);
         } else if (browserName.equalsIgnoreCase("firefox")) {
@@ -503,7 +506,7 @@ public class WebAPI {
 
     public void waitUntilVisible(By locator) {
         WebDriverWait wait = new WebDriverWait(driver, 10);
-        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+ //       WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
     public void waitUntilSelectable(By locator) {
@@ -557,8 +560,6 @@ public class WebAPI {
             System.out.println("CSS locator didn't work");
         }
     }
-
-
     // Customer Made Helper Methods for Amex.com
     public void brokenLink() throws IOException {
         //Step:1-->Get the list of all the links and images
@@ -588,20 +589,88 @@ public class WebAPI {
             System.out.println(activeLinks.get(j).getAttribute("href") + "--------->>> " + response);
         }
     }
-
     //  By Using FindBY@ Web Elements for Page objects
     public void inputValueInTextBoxByWebElement(WebElement webElement, String value) {
         webElement.sendKeys(value + Keys.ENTER);
     }
-
     public void clearInputBox(WebElement webElement) {
         webElement.clear();
     }
-
     public String getTextByWebElement(WebElement webElement) {
         String text = webElement.getText();
         return text;
     }
 
+    public void windowMaximize(){
+        driver.manage().window().maximize();
+    }
 
+    public void implicitwait(){
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    }
+
+    public void scrollDownTheWebPage() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,1000)");
+    }
+    public void findBrokenLink() {
+        List<WebElement> links = driver.findElements(By.tagName("a"));
+        System.out.println("Total links are " + links.size());
+        for (int i = 0; i < links.size(); i++) {
+            WebElement ele = links.get(i);
+            String url = ele.getAttribute("href");
+            verifyLinkActive(url);
+        }
+    }
+    public static void verifyLinkActive(String linkUrl) {
+        try {
+            URL url = new URL(linkUrl);
+            HttpURLConnection httpURLConnect = (HttpURLConnection) url.openConnection();
+            httpURLConnect.setConnectTimeout(3000);
+            httpURLConnect.connect();
+            if (httpURLConnect.getResponseCode() == 200) {
+                System.out.println(linkUrl + " - " + httpURLConnect.getResponseMessage());
+            }
+            if (httpURLConnect.getResponseCode() == HttpURLConnection.HTTP_NOT_FOUND) {
+                System.out.println(linkUrl + " - " + httpURLConnect.getResponseMessage() + " - " + HttpURLConnection.HTTP_NOT_FOUND);
+            }
+        } catch (Exception e) {
+        }
+    }
+    public void handleWindow() {
+        String parentHandle = driver.getWindowHandle();
+        System.out.println("parent window - " + parentHandle);
+        Set<String> handles = driver.getWindowHandles();
+        for (String handle : handles) {
+            System.out.println(handle);
+            if (!handle.equals(parentHandle)) {
+                driver.switchTo().window(handle);
+            }
+        }
+    }
+    public void Enter(){
+        Actions drpdown = new Actions(driver);
+        drpdown.sendKeys(Keys.ENTER).perform();
+    }
+    public void navigateurl(String url){
+        driver.navigate().to(url);
+    }
+
+    //Drop Down for Index
+    public void selectOptionByIndex(WebElement element, String value) {
+        Select select = new Select(element);
+        select.selectByVisibleText(value);
+    }
+
+    public void mouseHover(WebElement element) {
+        try {
+            Actions hover = new Actions(driver);
+            hover.moveToElement(element).perform();
+        } catch (Exception ex) {
+            System.out.println("1st mouse-hover attempt failed - Attempting 2nd time");
+            Actions hover = new Actions(driver);
+            hover.moveToElement(element).perform();
+        }
+    }
 }
+
