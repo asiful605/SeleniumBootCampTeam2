@@ -18,6 +18,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
+import org.testng.annotations.Optional;
 import reporting.ExtentManager;
 import reporting.ExtentTestManager;
 
@@ -30,10 +31,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 public class WebAPI {
@@ -41,7 +39,8 @@ public class WebAPI {
 
     //ExtentReport
     public static ExtentReports extent;
-//
+
+    //
     @BeforeSuite
     public void extentSetup(ITestContext context) {
         ExtentManager.setOutputDirectory(context);
@@ -124,7 +123,7 @@ public class WebAPI {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         //driver.manage().timeouts().pageLoadTimeout(25, TimeUnit.SECONDS);
         driver.get(url);
-        //driver.manage().window().maximize();
+        driver.manage().window().maximize();
     }
 
     public WebDriver getLocalDriver(@Optional("mac") String OS, String browserName) {
@@ -132,7 +131,7 @@ public class WebAPI {
         if (browserName.equalsIgnoreCase("chrome")) {
             if (OS.equalsIgnoreCase("OS X")) {
 
-                System.setProperty("webdriver.chrome.driver","../Generic/BrowserDriver/mac/chromedriver");
+                System.setProperty("webdriver.chrome.driver", "../Generic/BrowserDriver/mac/chromedriver");
 
 
             } else if (OS.equalsIgnoreCase("Windows")) {
@@ -259,6 +258,7 @@ public class WebAPI {
     public void navigateBack() {
         driver.navigate().back();
     }
+
     public void navigateTo(String url) {
         driver.navigate().to(url);
     }
@@ -266,6 +266,7 @@ public class WebAPI {
     public void navigateForward() {
         driver.navigate().forward();
     }
+
     public void navigateRefresh() {
         driver.navigate().refresh();
     }
@@ -283,7 +284,6 @@ public class WebAPI {
         DateFormat df = new SimpleDateFormat("(MM.dd.yyyy-HH:mma)");
         Date date = new Date();
         df.format(date);
-
         File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         try {
             FileUtils.copyFile(file,
@@ -459,7 +459,7 @@ public class WebAPI {
             System.out.println("First attempt has been done, This is second try");
             WebElement element = driver.findElement(By.xpath(locator));
             Actions action = new Actions(driver);
-            action.moveToElement(element).perform();
+            action.moveToElement(element).build().perform();
 
         }
 
@@ -604,5 +604,76 @@ public class WebAPI {
         return text;
     }
 
+    /*
+    this methods is to find broken links
+    used for Bank of America website
+    @author:Kahina
+     */
+    public void findBrokenLink() {
+        List<WebElement> links = driver.findElements(By.tagName("a"));
+        System.out.println("Total links are " + links.size());
+        for (int i = 0; i < links.size(); i++) {
+            WebElement ele = links.get(i);
+            String url = ele.getAttribute("href");
+            verifyLinkActive(url);
+        }
+    }
+    public static void verifyLinkActive(String linkUrl) {
+        try {
+            URL url = new URL(linkUrl);
+            HttpURLConnection httpURLConnect = (HttpURLConnection) url.openConnection();
+            httpURLConnect.setConnectTimeout(3000);
+            httpURLConnect.connect();
+            if (httpURLConnect.getResponseCode() == 200) {
+                System.out.println(linkUrl + " - " + httpURLConnect.getResponseMessage());
+            }
+            if (httpURLConnect.getResponseCode() == HttpURLConnection.HTTP_NOT_FOUND) {
+                System.out.println(linkUrl + " - " + httpURLConnect.getResponseMessage() + " - " + HttpURLConnection.HTTP_NOT_FOUND);
+            }
+        } catch (Exception e) {
+        }
+    }
+       /*
+       method to handle windowSwitching
+       @author:kahina
+      */
+    public void handleWindow() {
+        String parentHandle = driver.getWindowHandle();
+        System.out.println("parent window - " + parentHandle);
+        Set<String> handles = driver.getWindowHandles();
+        for (String handle : handles) {
+            System.out.println(handle);
+            if (!handle.equals(parentHandle)) {
+                driver.switchTo().window(handle);
+            }
+        }
+    }
+    /*
+    method to print links by Iteration
+    @author: kahina
+     */
+    public void printLinksTextByIteration(String locator) {
+        List<WebElement> allLinks = driver.findElements(By.xpath(locator));
+        Iterator<WebElement> itr = allLinks.iterator();
+        while (itr.hasNext()) {
+            System.out.println(itr.next().getText());
+        }
+    }
+        /*
+        methods to get the tooltip text
+        @author:kahina
+         */
+     public void dragAndDropUsingXpath(String locator){
+            //Element which needs to drag.
+            WebElement From=driver.findElement(By.xpath(locator));
+            //Element on which need to drop.
+            WebElement To=driver.findElement(By.xpath(locator));
+            //Using Action class for drag and drop.
+            Actions act=new Actions(driver);
+            //Dragged and dropped.
+            act.dragAndDrop(From, To).build().perform();
+        }
 
-}
+        }
+
+

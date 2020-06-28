@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Expedia Automation Script" parallel="false">
+
+    <parameter name="useCloudEnv" value="false"/>
+    <parameter name="cloudEnvName" value="browserstack"/>
+    <!--<parameter name="cloudEnvName" value="saucelab"/>-->
+    <!--    <parameter name="os" value="windows"/>-->
+    <parameter name="os" value="OS X"/>
+    <!--    <parameter name="os_version" value="10"/>-->
+    <parameter name="os_version" value="Catalina"/>
+    <parameter name="browserName" value="chrome"/>
+    <parameter name="browserVersion" value="83"/>
+    <parameter name="url" value="https://www.expedia.com/"/>
+
+
+
+    <test name="ExpediaHomePage">
+
+
+        <!--    <test name = "Test">-->
+        <classes>
+            <!--            <class name="hometest.ExpediaHomePageTest"></class>-->
+            <!--            <class name="web.TestHome"/>-->
+            <!--            <class name="web.TestCreateAccount"/>-->
+            <!--            <class name="web.TestFreeEpisodes"/>-->
+            <!--<class name="web.TestExpediaNowSignIn"/>-->
+            <!--<class name="TestSearch.TestDB"/>-->
+<!--            <class name="web.TestReadXlsx"/>-->
+            <!--<class name="TestSearch.TestGoogleSheet"/>-->
+            <!--            <class name="web.TestSports"/>-->
+
+
+
+
+        </classes>
+
+    </test>
+
+
+
+
+</suite>
+
+

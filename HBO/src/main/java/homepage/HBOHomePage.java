@@ -1,158 +1,150 @@
 package homepage;
 
 import common.WebAPI;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-import reporting.TestLogger;
-import search.XlsxDataReader;
+import org.testng.Assert;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import static webelements.HBOHomePageWebElements.*;
 
 public class HBOHomePage extends WebAPI {
 
-    @FindBy (how =How.XPATH, using = "/html/body/main/div[1]/div/div/header/div[1]/div/div[2]/div/div/div")
-    public  WebElement searchButton;
-    public  WebElement getSearchButton() {return searchButton;}
-    public void clickOnSearchButton () {
-        TestLogger.log(getClass().getSimpleName()+":"+convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
-        getSearchButton().click();}
-
-    @FindBy (how = How.XPATH, using = "/html/body/main/div[1]/div/div/header/div[1]/div/div[3]/div/a/span")
-    public  WebElement getHBO;
-    public  WebElement getGetHBO() {return getHBO;}
-    public void clickonGetHBO () {
-        TestLogger.log(getClass().getSimpleName()+":"+convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
-        getGetHBO().click(); }
-
-    @FindBy (how = How.XPATH, using = "//div[@class='bands/MainNavigation--stickyBar']//span[@class='components/Tooltip--label']")
-    public WebElement signIn;
-    public WebElement getSignIn() {return signIn;}
-    public void clickOnSignIn() {
-        TestLogger.log(getClass().getSimpleName()+":"+convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
-        getSignIn();}
-
-    @FindBy (xpath = "/html/body/main/div[1]/div/div/header/div[1]/div/div[1]/span/a/svg/g/g/path")
-    public WebElement HBOLogo;
-    public void clickOnLogo () {
-        TestLogger.log(getClass().getSimpleName()+":"+convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
-        HBOLogo.click(); }
-
-    @FindBy(xpath = "//div[contains(@class,'bands/MainNavigation--searchIcon')]")
-    public WebElement searchlink;
-    public void clicksearchlink(){
-        TestLogger.log(getClass().getSimpleName()+":"+convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
-        searchlink.click();
-    }
-    @FindBy(xpath = "//input[@placeholder='Search']")
-    public WebElement searchBox;
-    public void sendInput () {
-        TestLogger.log(getClass().getSimpleName()+":"+convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
-        searchBox.sendKeys("Game of Thrones", Keys.ENTER);
-    }
-
-    @FindBy(xpath = "//*[@id=\"root\"]/main/div[2]/header/div[1]/div/div[2]/div/div/ul/li[1]/div/a")
-    public WebElement series;
-    public void findSeries(){
-        TestLogger.log(getClass().getSimpleName()+":"+convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
-        series.click();}
-
-    @FindBy(css = ".bands\\/MainNavigation--topBar [href='\\/movies']")
-    public WebElement movies;
-    public String findMovies(){
-        TestLogger.log(getClass().getSimpleName()+":"+convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
-        movies.click();
-        String title = driver.getTitle();
-        System.out.println("Movies page Title: " + title);
-        return title;
-    }
-    @FindBy(xpath = "//*[@id=\"root\"]/main/div[2]/header/div[1]/div/div[3]/ul/li[1]/div/a")
-    public WebElement searchFreeEpisodes;
-    public void getFreeEpisodes(){
-        TestLogger.log(getClass().getSimpleName()+":"+convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
-        searchFreeEpisodes.click();}
-
-    @FindBy (xpath = "//*[@id=\"root\"]/main/div[2]/header/div[1]/div/div[2]/div/div/ul/li[4]/div/a")
-    public WebElement sports;
-    public void getSports(){
-        TestLogger.log(getClass().getSimpleName()+":"+convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
-        sports.click();}
-
-    @FindBy (xpath = "//a[@title='facebook']")
-    public WebElement fbPage;
-    public void getFbPage(){
-        TestLogger.log(getClass().getSimpleName()+":"+convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
-        fbPage.click();}
-
-    @FindBy (xpath = "//a[@title='instagram']")
-    public WebElement instaPage;
-    public void getInstaPage(){
-        TestLogger.log(getClass().getSimpleName()+":"+convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
-        instaPage.click();}
-
-    @FindBy (xpath = "//a[@title='twitter']")
-    public WebElement twitterLogo;
-    public void getTwitterPage(){
-        TestLogger.log(getClass().getSimpleName()+":"+convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
-        twitterLogo.click();}
-
-    @FindBy (xpath = "//a[@title='youtube']")
-    public WebElement youtubeLogo;
-    public void navigateToYoutubePage(){
-        TestLogger.log(getClass().getSimpleName()+":"+convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
-        youtubeLogo.click();}
-
-    public List webElementList(){
-        List<WebElement> webElements = new ArrayList<>();
-        webElements.add(searchButton);
-        webElements.add(getHBO);
-        webElements.add(signIn);
-        webElements.add(HBOLogo);
-        webElements.add(searchlink);
-        webElements.add(searchBox);
-        webElements.add(series);
-        webElements.add(movies);
-        webElements.add(searchFreeEpisodes);
-        webElements.add(sports);
-        webElements.add(fbPage);
-        webElements.add(instaPage);
-        webElements.add(twitterLogo);
-        webElements.add(youtubeLogo);
-
-        List<String>list = new ArrayList<>();
-        for(int i=0; i<webElements.size();i++){
-            list.add(webElements.get(i).getText());
+    @FindBy(how = How.XPATH, using = signInWebElement) public WebElement sighIN;
+    @FindBy(how = How.XPATH, using = HBOPlanWebElement) public WebElement HBOPlan;
+    @FindBy(how = How.XPATH, using = sighInPageWebElement) public WebElement signInPage;
+    @FindBy(how = How.XPATH, using = emailWebElement) public WebElement email;
+    @FindBy(how = How.XPATH, using = passwordWebElement) public WebElement password;
+    @FindBy(how = How.XPATH, using = clickSignInWebElement) public WebElement clickSignIn;
+    @FindBy(how = How.XPATH, using = headerWebElements) public List<WebElement> header;
+    @FindBy(how = How.XPATH, using = moviesWebElement) public WebElement movies;
+    @FindBy(how = How.XPATH, using = documentariesWebElement) public WebElement documentaries;
+    @FindBy(how = How.XPATH, using = seriesWebElement) public WebElement series;
+    @FindBy(how = How.XPATH, using = allSeriesWebElement) public WebElement allSeries;
+    @FindBy(how = How.XPATH, using = specialsWebElement) public WebElement specials;
+    @FindBy(how = How.XPATH, using = allSpecialsWebElement) public WebElement allSpecials;
+    @FindBy(how = How.XPATH, using = kidsWebElement) public WebElement kids;
+    @FindBy(how = How.XPATH, using = royWebElement) public WebElement roy;
+    @FindBy(how = How.XPATH, using = sportsWebElement) public WebElement sports;
+    @FindBy(how = How.XPATH, using = allSportsWebElement) public WebElement allSports;
+    @FindBy(how = How.XPATH, using = footerLinksWebElement) public List <WebElement> footer;
+    @FindBy(how = How.XPATH, using = aboutWebElement) public WebElement about;
+    @FindBy(how = How.XPATH, using = facebookWebElement) public WebElement facebook;
+    @FindBy(how = How.XPATH, using = fbPhotoWebElement) public WebElement fbPhoto;
+    public void timeOuts(){driver.manage().timeouts().implicitlyWait(2,TimeUnit.SECONDS);}
+    public void clickSignIn() { sighIN.click(); }
+    public void chooseHBOPlan() { HBOPlan.click(); }
+    public void getInSignInPage() { signInPage.click(); }
+    public void enterEmail() { email.sendKeys("test@yahoo.com"); }
+    public void enterPassword() { password.sendKeys("test12345"); }
+    public void execute() { clickSignIn.click(); }
+    public List<WebElement> getHeader() {
+        List<WebElement> headerName = header;
+        for (WebElement head : header) {
+            System.out.println(head.getText());
         }
-        System.out.println(list);
-        return list;
+        return headerName;
     }
-
-    XlsxDataReader xlData = new XlsxDataReader("src/main/java/search/XlsxDataReader.java");
-    public List expectedWebElement(){
-        int rowcount = xlData.getRowCount("Sheet1");
-        List<String> expect = new ArrayList<>();
-        for(int i = 1; i <= rowcount; i++){
-            expect.add(xlData.getCellData("Sheet1","searchButton",i));
+    public void selectMovies(){movies.click();}
+    public void chooseDocumentaries(){documentaries.click();}
+    public void selectSeries(){series.click();}
+    public void chooseAllSeries(){allSeries.click();}
+    public void selectSpecials(){specials.click();}
+    public void chooseAllSpecials(){allSpecials.click();}
+    public void selectKids(){kids.click();}
+    public void chooseRoy(){roy.click();}
+    public void selectSports(){sports.click();}
+    public void chooseALLSports(){allSports.click();}
+    public List<WebElement> getFooter() {
+        List<WebElement> footerName = footer;
+        for (WebElement foot : footer) {
+            System.out.println(foot.getText());
         }
-        System.out.println(expect);
-        return expect;
+        return footerName;
     }
+    public void clickAboutTab(){about.click();}
+    public void facebookTab(){facebook.click();}
+    public void fbPhotos(){fbPhoto.click();}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    public void signInToHBO() {
+        clickSignIn();
+        chooseHBOPlan();
+        getInSignInPage();
+        timeOuts();
+        enterEmail();
+        enterPassword();
+        execute();
+        Boolean verifyTitle = driver.getTitle().equalsIgnoreCase("successfully login");
+        Assert.assertFalse(verifyTitle);
+    }
+    public void readHeader() {
+        getHeader();
+    }
+    public void documentariesPage(){
+        selectMovies();
+        mouseHoverByXpath("//*[@id=\"root\"]/main/div[2]/header/div[2]/div/div/div/div/ul/li[2]/div/a");
+        timeOuts();
+        chooseDocumentaries();
+    }
+    public void validateDocPage(){
+        String actualTitle=driver.getCurrentUrl();
+        Assert.assertEquals(actualTitle,"https://www.hbo.com/documentaries");
+    }
+    public void allSeriesPage(){
+        selectSeries();
+        mouseHoverByXpath("//body/div/main/div/header/div/div/div[1]/div[1]/div[1]/ul[1]/li[2]/div[1]/a[1]");
+        chooseAllSeries();
+    }
+    public void validateAllSeriesPage(){
+        String actualTitle=driver.getCurrentUrl();
+        Assert.assertEquals(actualTitle,"https://www.hbo.com/series/all-series");
+    }
+    public void allSpecialsPage(){
+        selectSpecials();
+        mouseHoverByXpath("//*[@id=\"root\"]/main/div[2]/header/div[2]/div/div/div/div/ul/li[2]/div/a");
+        chooseAllSpecials();
+    }
+    public void validateAllSpecialsPage(){
+        String actualTitle=driver.getCurrentUrl();
+        Assert.assertEquals(actualTitle,"https://www.hbo.com/specials/all-specials");
+    }
+    public void kidsPage(){
+        selectKids();
+        mouseHoverByXpath("//body/div/main/div/header/div/div/div[1]/div[1]/div[1]/ul[1]/li[2]/div[1]/a[1]");
+        timeOuts();
+        chooseRoy();
+    }
+    public void validateKidsPage(){
+        String actualTitle=driver.getCurrentUrl();
+        Assert.assertEquals(actualTitle,"https://www.hbo.com/kids/esme-and-roy");
+    }
+    public void sportsPage(){
+        selectSports();
+        mouseHoverByXpath("//*[@id=\"root\"]/main/div[2]/header/div[2]/div[2]/div/div/div/ul/li[2]/div/a");
+        chooseALLSports();
+    }
+    public void validateSportsPage(){
+        String actualTitle=driver.getCurrentUrl();
+        Assert.assertEquals(actualTitle,"https://www.hbo.com/sports/sports-catalog");
+    }
+    public void readFooter(){ getFooter(); }
+    public void validateAboutTab(){
+        clickAboutTab();
+        String actualTitle=driver.getCurrentUrl();
+        Assert.assertEquals(actualTitle,"https://www.hbo.com/about/");
+    }
+    public void checkFB(){
+       facebookTab();
+       mouseHoverByXpath("//span[contains(text(),'Photos')]");
+       fbPhotos();
+    }
+    public void validateFbTab(){
+        String actualTitle=driver.getCurrentUrl();
+        Assert.assertEquals(actualTitle,"https://www.facebook.com/HBO/photos/");
+    }
 
 
 

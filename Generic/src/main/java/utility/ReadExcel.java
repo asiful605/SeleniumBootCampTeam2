@@ -15,16 +15,19 @@ public class ReadExcel {
 
 
 
+
+
     /**
      * This method is to read Excel file based on sheet Index Number
      *
      *
      *
      *
+     * @return
      */
     public static void readExcelFile() {
         try {
-            FileInputStream inputStream = new FileInputStream(new File(FILE_NAME));
+            FileInputStream inputStream = new FileInputStream(new File( FILE_NAME));
             Workbook workbook = new XSSFWorkbook(inputStream);
             Sheet dataTypeSheet = workbook.getSheetAt(0);
             Iterator<Row> rowIterator = dataTypeSheet.iterator();
@@ -51,7 +54,7 @@ public class ReadExcel {
             e1.printStackTrace();
             System.out.println("Input Output Exception");
         }
-
+;
     }
 
 

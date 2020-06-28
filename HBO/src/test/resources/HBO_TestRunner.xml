@@ -22,15 +22,6 @@
 <!--    <test name = "Test">-->
         <classes>
             <class name="hometest.HBOHomePageTest"></class>
-            <class name="web.TestHome"/>
-<!--            <class name="web.TestCreateAccount"/>-->
-<!--            <class name="web.TestFreeEpisodes"/>-->
-<!--            <class name="web.TestHBONowSignIn"/>-->
-<!--            <class name="TestSearch.TestDB"/>-->
-            <class name="web.TestReadXlsx"/>
-<!--            <class name="TestSearch.TestGoogleSheet"/>-->
-<!--            <class name="web.TestSports"/>-->
-
 
 
 

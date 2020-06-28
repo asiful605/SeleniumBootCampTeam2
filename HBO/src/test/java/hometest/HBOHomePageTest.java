@@ -1,62 +1,96 @@
 package hometest;
 
-import basic.HomePage;
+
 import common.WebAPI;
+import homepage.HBOHomePage;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import reporting.TestLogger;
 
 public class HBOHomePageTest extends WebAPI {
-    HomePage hp ;
-    @BeforeMethod
-    public void initializeElement () {
-        hp= PageFactory.initElements(driver,HomePage.class);
+
+
+
+    static HBOHomePage hboHomePage;
+
+    public static void getInitElements() {
+        hboHomePage = PageFactory.initElements(driver,HBOHomePage.class);
     }
-    @Test
-    public void clickSearchButton () { hp.clickOnSearchButton(); }
-    @Test
-    public void clickGetHBO() {hp.clickonGetHBO(); }
-    @Test
-    public void clickSignIn() {hp.clickOnSignIn();}
-    @Test
-    public void clickLogo () {hp.clickOnLogo();}
-    @Test
-    public void clickSearchlink(){hp.clicksearchlink();}
-//    @Test
-//    public void searchItems(){hp.sendInput();}
-    @Test
-    public void clickSeries(){hp.findSeries();}
-    @Test
-    public void clickMovie(){hp.findMovies();}
-    @Test
-    public void clickFreeEpisodes(){hp.getFreeEpisodes();}
-    @Test
-    public void clickGetSports(){hp.clickHBOToday();}
-    @Test
-    public void testFbPage(){hp.getFbPage();}
-    @Test
-    public void checkInstaPage(){hp.getInstaPage();}
-    @Test
-    public void viewTwitterPage(){hp.getTwitterPage();}
-    @Test
-    public void viewYoutubePage(){hp.navigateToYoutubePage();}
-    /*@Test
-    public void webElementName(){
-        List actual = hp.webElementList();
-        List expected = hp.expectedWebElement();
-        Assert.assertEquals(actual,expected);
-    }*/
-
-
-
-
-
-
-
-
-
-
-
-
+    @Test(priority=1,enabled = true)
+    public void testSignInToHBO(){
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
+        }.getClass().getEnclosingMethod().getName()));
+        getInitElements();
+       hboHomePage.signInToHBO();
+    }
+    @Test(priority=2,enabled = true)
+    public void testReadHeader(){
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
+        }.getClass().getEnclosingMethod().getName()));
+        getInitElements();
+        hboHomePage.readHeader();
+    }
+    @Test(priority=3,enabled =true)
+    public void testDocumentariesPage(){
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
+        }.getClass().getEnclosingMethod().getName()));
+        getInitElements();
+        hboHomePage.documentariesPage();
+        hboHomePage.validateDocPage();
+    }
+    @Test(priority=4,enabled = true)
+    public void testAllSeries(){
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
+        }.getClass().getEnclosingMethod().getName()));
+        getInitElements();
+        hboHomePage.allSeriesPage();
+        hboHomePage.validateAllSeriesPage();
+    }
+    @Test(priority=5,enabled = true)
+    public void testAllSpecialsPage(){
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
+        }.getClass().getEnclosingMethod().getName()));
+        getInitElements();
+       hboHomePage.allSpecialsPage();
+       hboHomePage.validateAllSpecialsPage();
+    }
+    @Test(priority=6,enabled = true)
+    public void testKidsPage(){
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
+        }.getClass().getEnclosingMethod().getName()));
+        getInitElements();
+       hboHomePage.kidsPage();
+       hboHomePage.validateKidsPage();
+    }
+    @Test(priority=7,enabled = true)
+    public void testAllSportsPage(){
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
+        }.getClass().getEnclosingMethod().getName()));
+        getInitElements();
+        hboHomePage.sportsPage();
+        hboHomePage.validateSportsPage();
+    }
+    @Test(priority=8,enabled = true)
+    public void testReadFooter(){
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
+        }.getClass().getEnclosingMethod().getName()));
+        getInitElements();
+        hboHomePage.readFooter();
+    }
+    @Test(priority=9,enabled = true)
+    public void testValidateAboutTab(){
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
+        }.getClass().getEnclosingMethod().getName()));
+        getInitElements();
+        hboHomePage.validateAboutTab();
+    }
+    @Test(priority=9,enabled = true)
+    public void testCheckFB(){
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
+        }.getClass().getEnclosingMethod().getName()));
+        getInitElements();
+        hboHomePage.checkFB();
+        hboHomePage.validateFbTab();
+    }
 
 }
