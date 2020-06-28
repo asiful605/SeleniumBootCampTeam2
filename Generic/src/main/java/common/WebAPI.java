@@ -116,12 +116,6 @@ public class WebAPI {
         driver.manage().window().maximize();
     }
 
-    public void windowMaximize(){
-        driver.manage().window().maximize();
-    }
-    public void implicitwait(){
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-    }
     public WebDriver getLocalDriver(@Optional("mac") String OS, String browserName) {
 
         if (browserName.equalsIgnoreCase("chrome")) {
@@ -581,6 +575,12 @@ public class WebAPI {
         return text;
     }
 
+    public void windowMaximize(){
+        driver.manage().window().maximize();
+    }
+    public void implicitwait(){
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    }
 
     public void scrollDownTheWebPage() {
         JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -596,7 +596,6 @@ public class WebAPI {
             verifyLinkActive(url);
         }
     }
-
     public static void verifyLinkActive(String linkUrl) {
         try {
             URL url = new URL(linkUrl);
@@ -676,4 +675,53 @@ public class WebAPI {
             checkbox.click();
         }
     }
+     /*
+     method to print links by Iteration
+     @author: kahina
+     */
+    public void printLinksTextByIteration(String locator) {
+        List<WebElement> allLinks = driver.findElements(By.xpath(locator));
+        Iterator<WebElement> itr = allLinks.iterator();
+        while (itr.hasNext()) {
+            System.out.println(itr.next().getText());
+        }
+    }
+    /*
+    methods to get the tooltip text
+    @author:kahina
+    */
+    public void dragAndDropUsingXpath(String locator){
+        //Element which needs to drag.
+        WebElement From=driver.findElement(By.xpath(locator));
+        //Element on which need to drop.
+        WebElement To=driver.findElement(By.xpath(locator));
+        //Using Action class for drag and drop.
+        Actions act=new Actions(driver);
+        //Dragged and dropped.
+        act.dragAndDrop(From, To).build().perform();
+    }
+    public void checkBoxSelectedByCSS(String locator){
+
+        driver.findElement(By.cssSelector(locator)).isSelected();
+    }
+    public void checkBoxSelectedByXpath(String locator){
+
+        driver.findElement(By.cssSelector(locator)).isSelected();
+
+    }
+    public void clickByLinkText(String locator){
+
+        driver.findElement(By.cssSelector(locator)).click();
+
+    }
+    public void typeByID(String locator, String value){
+
+        driver.findElement(By.xpath(locator)).sendKeys(value);
+
+    }
+    public void clickByID(String locator){
+
+        driver.findElement(By.cssSelector(locator)).click();
+    }
 }
+

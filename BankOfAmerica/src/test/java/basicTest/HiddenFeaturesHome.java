@@ -5,138 +5,109 @@ import common.WebAPI;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import reporting.TestLogger;
 
 public class HiddenFeaturesHome extends WebAPI {
 
-    static BOAHomeHiddenFeatures bhf;// Reference variable/object of CignaHomePage
+    static BOAHomeHiddenFeatures bhf;
     public static void getInitElements() {
         bhf = PageFactory.initElements(driver, BOAHomeHiddenFeatures.class);
     }
     @Test
     public void testcheckingFunctionality() {
-        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
-        }.getClass().getEnclosingMethod().getName()));
         getInitElements();
         Assert.assertEquals(bhf.checkingMenuIsDisplayed(), true);
     }
     @Test
     public void savingFunctionality() {
-        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
-        }.getClass().getEnclosingMethod().getName()));
-
         Assert.assertEquals(bhf.savingMenuIsDisplayed(), true);
     }
     @Test
     public void creditCardFunctionality() {
-        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
-        }.getClass().getEnclosingMethod().getName()));
         getInitElements();
         Assert.assertEquals(bhf.CreditCardMenuIsDisplayed(), true);
     }
     @Test
     public void homeLoansFunctionality() {
-        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
-        }.getClass().getEnclosingMethod().getName()));
         getInitElements();
         Assert.assertEquals(bhf.HomeLoanMenuIsDisplayed(), true);
     }
     @Test
     public void autoLoansFunctionality() {
-        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
-        }.getClass().getEnclosingMethod().getName()));
         getInitElements();
         Assert.assertEquals(bhf.autoLoansMenuIsDisplayed(), true);
     }
     @Test
     public void investingFunctionality() {
-        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
-        }.getClass().getEnclosingMethod().getName()));
         getInitElements();
         Assert.assertEquals(bhf.investingMenuIsDisplayed(), true);
     }
     @Test
     public void betterMoneyHabitsFunctionality() {
-        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
-        }.getClass().getEnclosingMethod().getName()));
         getInitElements();
         Assert.assertEquals(bhf.betterMoneyHabitsMenuIsDisplayed(), true);
     }
     @Test
-    public void smallBusinessTabFunctionality(String smallBusinessUrl) throws InterruptedException {
-        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
+    public void smallBusinessTabFunctionality(String smallBusinessUrl){
         getInitElements();
         bhf.smallBusinessPageTitle(smallBusinessUrl);
     }
     @Test
-    public void wealthManagementTabFunctionality(String wealthManagementUrl) throws InterruptedException {
-        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
+    public void wealthManagementTabFunctionality(String wealthManagementUrl){
         getInitElements();
         bhf.wealthManagementPageTitle(wealthManagementUrl);
     }
     @Test
-    public void businessNInstitutionTabFunctionality(String businessInstitutionUrl) throws InterruptedException {
-        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
+    public void businessNInstitutionTabFunctionality(String businessInstitutionUrl){
         getInitElements();
         bhf.businessNInstitutionPageTitle(businessInstitutionUrl);
     }
     @Test
-    public void securityTabFunctionality(String securityUrl) throws InterruptedException {
-        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
+    public void securityTabFunctionality(String securityUrl){
         getInitElements();
         bhf.securityPageTitle(securityUrl);
     }
     @Test
-    public void aboutUsTabFunctionality(String aboutUsUrl) throws InterruptedException {
-        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
+    public void aboutUsTabFunctionality(String aboutUsUrl){
         getInitElements();
         bhf.aboutUsPageTitle(aboutUsUrl);
     }
     @Test
-    public void EnEspañolTabFunctionality(String enEspanolUrl) throws InterruptedException {
-        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
+    public void EnEspañolTabFunctionality(String enEspanolUrl){
         getInitElements();
         bhf.EnEspañolPageTitle(enEspanolUrl);
     }
     @Test
-    public void contactUsTabFunctionality(String contactUsUrl) throws InterruptedException {
-        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
+    public void contactUsTabFunctionality(String contactUsUrl){
         getInitElements();
         bhf.contactUsPageTitle(contactUsUrl);
     }
     @Test
     public void helpTabFunctionality() throws InterruptedException {
-        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         getInitElements();
         bhf.helpTabPopUp();
     }
     @Test
     public void checkingFunctionality() {
-        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {}.getClass().getEnclosingMethod().getName()));
         getInitElements();
         bhf.checkingClick();
     }
     @Test
     public void enEspanolClickable(){
-        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {}.getClass().getEnclosingMethod().getName()));
         getInitElements();
         bhf.enEspanolClick();
     }
     @Test
     public void helpClickable(){
-        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {}.getClass().getEnclosingMethod().getName()));
         getInitElements();
         bhf.helpClick();
     }
     @Test
     public void businessInstitutionClickable(){
-        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {}.getClass().getEnclosingMethod().getName()));
         getInitElements();
         bhf.businessInstitutionClick();
     }
     @Test
     public void smallBusinessClickable(){
-        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {}.getClass().getEnclosingMethod().getName()));
         getInitElements();
         bhf.smallBusinessClick();
     }
@@ -147,13 +118,11 @@ public class HiddenFeaturesHome extends WebAPI {
     }
     @Test
     public void contactUsClickable(){
-        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {}.getClass().getEnclosingMethod().getName()));
         getInitElements();
         bhf.contactUsClick();
     }
     @Test
     public void wealthManagementClickable(){
-        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {}.getClass().getEnclosingMethod().getName()));
         getInitElements();
         bhf.wealthManagementClick();
     }

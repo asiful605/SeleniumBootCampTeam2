@@ -18,7 +18,7 @@
     <test name="BoAHomePage">
         <classes>
 <!--                        <class name="testBoA.BoATest"></class>-->
-                        <class name="basicTest.BasicHomePageTest"></class>
+<!--                        <class name="basicTest.BasicHomePageTest"></class>-->
                         <class name="basicTest.HiddenFeaturesHome"></class>
 <!--                        <class name="basicTest.TestSmallBusinessvideo"></class>-->
 <!--                        <class name="testBoA.WealthManagementNavigation"></class>-->
