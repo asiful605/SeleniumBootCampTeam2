@@ -17,6 +17,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
+import org.testng.annotations.Optional;
 import org.testng.annotations.*;
 import reporting.ExtentManager;
 import reporting.ExtentTestManager;
@@ -30,10 +31,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 public class WebAPI {
@@ -122,19 +120,16 @@ public class WebAPI {
             getLocalDriver(os, browserName);
         }
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        //driver.manage().timeouts().pageLoadTimeout(25, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(25, TimeUnit.SECONDS);
         driver.get(url);
-        //driver.manage().window().maximize();
+        driver.manage().window().maximize();
     }
 
     public WebDriver getLocalDriver(@Optional("mac") String OS, String browserName) {
 
         if (browserName.equalsIgnoreCase("chrome")) {
             if (OS.equalsIgnoreCase("OS X")) {
-
-
-                //System.setProperty("webdriver.chrome.driver","/Users/kahinaayouni/IdeaProjects/SeleniumBootCampTeam2/Generic/BrowserDriver/mac/chromedriver");
-
+                System.setProperty("webdriver.chrome.driver", "../Generic/BrowserDriver/mac/chromedriver");
 
             } else if (OS.equalsIgnoreCase("Windows")) {
                 System.setProperty("webdriver.chrome.driver", "../Generic/BrowserDriver/windows/chromedriver1.exe");
@@ -314,6 +309,7 @@ public class WebAPI {
         }
     }
 
+
     public void typeOnInputField(String locator, String value) {
         try {
             driver.findElement(By.cssSelector(locator)).sendKeys(value);
@@ -326,10 +322,18 @@ public class WebAPI {
     public void clickByXpath(String locator) {
         driver.findElement(By.xpath(locator)).click();
     }
+    public void clickByCSS(String locator) {
+        driver.findElement(By.xpath(locator)).click();
+    }
+    public void clickByID(String locator) {
+        driver.findElement(By.xpath(locator)).click();
+    }
+
 
     public void typeByCss(String locator, String value) {
         driver.findElement(By.cssSelector(locator)).sendKeys(value);
     }
+    public void typeByID(String locator, String value) { driver.findElement(By.cssSelector(locator)).sendKeys(value); }
 
     public void typeByCssNEnter(String locator, String value) {
         driver.findElement(By.cssSelector(locator)).sendKeys(value, Keys.ENTER);
@@ -505,7 +509,7 @@ public class WebAPI {
 
     public void waitUntilVisible(By locator) {
         WebDriverWait wait = new WebDriverWait(driver, 10);
-        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        //WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
     public void waitUntilSelectable(By locator) {
@@ -604,6 +608,97 @@ public class WebAPI {
         String text = webElement.getText();
         return text;
     }
+    public void scrollDownTillEnd() {
+        JavascriptExecutor js1 = (JavascriptExecutor) driver;
+        js1.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+    }
+    public void windowMaximize(){
+        driver.manage().window().maximize();
+    }
+
+    public void implicitwait(){
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    }
+
+    public void scrollDownTheWebPage() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,1000)");
+    }
+    public static void findBrokenLink() {
+        List<WebElement> links = driver.findElements(By.tagName("a"));
+        System.out.println("Total links are " + links.size());
+        for (int i = 0; i < links.size(); i++) {
+            WebElement ele = links.get(i);
+            String url = ele.getAttribute("href");
+            verifyLinkActive(url);
+        }
+    }
+    public static void verifyLinkActive(String linkUrl) {
+        try {
+            URL url = new URL(linkUrl);
+            HttpURLConnection httpURLConnect = (HttpURLConnection) url.openConnection();
+            httpURLConnect.setConnectTimeout(3000);
+            httpURLConnect.connect();
+            if (httpURLConnect.getResponseCode() == 200) {
+                System.out.println(linkUrl + " - " + httpURLConnect.getResponseMessage());
+            }
+            if (httpURLConnect.getResponseCode() == HttpURLConnection.HTTP_NOT_FOUND) {
+                System.out.println(linkUrl + " - " + httpURLConnect.getResponseMessage() + " - " + HttpURLConnection.HTTP_NOT_FOUND);
+            }
+        } catch (Exception e) {
+        }
+    }
+    public void handleWindow() {
+        String parentHandle = driver.getWindowHandle();
+        System.out.println("parent window - " + parentHandle);
+        Set<String> handles = driver.getWindowHandles();
+        for (String handle : handles) {
+            System.out.println(handle);
+            if (!handle.equals(parentHandle)) {
+                driver.switchTo().window(handle);
+            }
+        }
+    }
+    public void Enter(){
+        Actions drpdown = new Actions(driver);
+        drpdown.sendKeys(Keys.ENTER).perform();
+    }
+    public void navigateurl(String url){
+        driver.navigate().to(url);
+    }
+
+    //Drop Down for Index
+    public void selectOptionByIndex(WebElement element, String value) {
+        Select select = new Select(element);
+        select.selectByVisibleText(value);
+    }
+
+    public void mouseHover(WebElement element) {
+        try {
+            Actions hover = new Actions(driver);
+            hover.moveToElement(element).perform();
+        } catch (Exception ex) {
+            System.out.println("1st mouse-hover attempt failed - Attempting 2nd time");
+            Actions hover = new Actions(driver);
+            hover.moveToElement(element).perform();
+        }
+    }
+    public void checkBoxSelectedByCSS(String locator){
+        driver.findElement(By.cssSelector(locator)).isSelected();
+    }
+
+    public void checkBoxSelectedByXpath(String locator){
+        driver.findElement(By.cssSelector(locator)).isSelected();
+    }
+
+
+    public void clickByLinkText(String locator){
+        driver.findElement(By.cssSelector(locator)).click();
+    }
+
+
+
+
 
 
 }

@@ -3,7 +3,6 @@ package search;
 import databases.ConnectToSqlDB;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,8 +12,9 @@ public class DatabaseOperation extends ConnectToSqlDB {
     public static void insertDataIntoDB() {
         List<String> list = getHeaderValue();
         ConnectToSqlDB connectToSqlDB = new ConnectToSqlDB();
-        //connectToSqlDB.insertStringDataFromArrayListToSqlTable(list, "headerList","headers");
+        connectToSqlDB.insertStringDataFromArrayListToSqlTable(list, "headerList", "headers");
     }
+
     public static List<String> getHeaderValue() {
         List<String> headerList = new ArrayList<>();
         headerList.add("ABOUT");
@@ -25,12 +25,14 @@ public class DatabaseOperation extends ConnectToSqlDB {
         headerList.add("HBO INSPIRES");
         return headerList;
     }
+
     public List<String> getUserDatafromDB() throws Exception {
         List<String> list = new ArrayList<>();
         list = connectToSqlDB.readDataBase("headerList", "headers");
         System.out.println(list);
         return list;
     }
+
     @FindBy(xpath = "//a[contains(text(),'About')]")
     WebElement ABOUT;
     @FindBy(xpath = "//a[contains(text(),'Ways to Get')]")
@@ -54,12 +56,13 @@ public class DatabaseOperation extends ConnectToSqlDB {
         headerList1.add(HBOINSPIRES);
 
         List<String> list = new ArrayList<>();
-        for (int i = 0; i<headerList1.size();i++){
+        for (int i = 0; i < headerList1.size(); i++) {
             list.add(headerList1.get(i).getText());
         }
         System.out.println(list);
         return list;
     }
+
     public static void main(String[] args) {
         insertDataIntoDB();
         ConnectToSqlDB connectToSqlDB = new ConnectToSqlDB();
@@ -74,3 +77,4 @@ public class DatabaseOperation extends ConnectToSqlDB {
         }
     }
 }
+

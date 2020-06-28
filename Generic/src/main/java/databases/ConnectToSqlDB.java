@@ -135,7 +135,7 @@ public class ConnectToSqlDB {
         return data;
     }
 
-    /*public void insertDataFromArrayListToSqlTable(List<Student> list, String tableName, String columnName)
+    public void insertDataFromArrayListToSqlTable(List<Student> list, String tableName, String columnName)
     {
         try {
             connectToSqlDatabase();
@@ -156,8 +156,8 @@ public class ConnectToSqlDB {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-    }*/
-    public void insertDataFromArrayListToSqlTable(List<String> list, String tableName, String columnName)
+    }
+    /*public void insertDataFromArrayListToSqlTable(List<String> list, String tableName, String columnName)
     {
         try {
             connectToSqlDatabase();
@@ -179,7 +179,7 @@ public class ConnectToSqlDB {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
 
     public void insertProfileToSqlTable(String tableName, String columnName1, String columnName2)
@@ -238,4 +238,6 @@ public class ConnectToSqlDB {
     }
 
 
+    public static void insertStringDataFromArrayListToSqlTable(List<String> list, String headerList, String headers) {
+    }
 }

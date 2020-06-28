@@ -17,10 +17,11 @@ public class XlsxDataReader {
         try {
             FileInputStream ExcelFile = new FileInputStream(path);
             ExcelWBook = new XSSFWorkbook(ExcelFile);
-        } catch (Exception e){
+        } catch (Exception e) {
             throw (e);
         }
     }
+
     public String[][] getExcelSheetData(String sheetname) throws Exception {
         String[][] data = null;
         String[][] mydata = null;
@@ -29,7 +30,7 @@ public class XlsxDataReader {
             if (sheet != null) {
                 int rows = sheet.getLastRowNum();
                 int cols = sheet.getRow(sheet.getLastRowNum()).getPhysicalNumberOfCells();
-                int arrayrow = rows+1;
+                int arrayrow = rows + 1;
                 data = new String[arrayrow][cols];
                 mydata = new String[rows][cols];
                 for (int i = 0; i < arrayrow; i++) {
@@ -40,9 +41,9 @@ public class XlsxDataReader {
                     }
                 }
                 // copied array to get rid of header row
-                for(int m=0; m<rows; m++){
-                    for (int n=0; n<cols; n++){
-                        mydata[m][n] = data[m+1][n];
+                for (int m = 0; m < rows; m++) {
+                    for (int n = 0; n < cols; n++) {
+                        mydata[m][n] = data[m + 1][n];
                     }
                 }
             }
@@ -68,6 +69,7 @@ public class XlsxDataReader {
             e.printStackTrace();
         }
     }
+
     // returns the row count in a sheet
     public int getRowCount(String sheetName) {
         int index = workbook.getSheetIndex(sheetName);
@@ -79,6 +81,7 @@ public class XlsxDataReader {
             return number;
         }
     }
+
     // returns the data from a cell
     public String getCellData(String sheetName, String colName, int rowNum) {
         try {
@@ -135,6 +138,9 @@ public class XlsxDataReader {
             return "row " + rowNum + " or column " + colName + " does not exist in xls";
         }
     }
-
-
 }
+
+        
+
+
+

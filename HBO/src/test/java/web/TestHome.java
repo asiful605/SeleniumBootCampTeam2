@@ -1,12 +1,13 @@
 package web;
 
-//import base.CommonAPI;
 import basic.HomePage;
 import common.WebAPI;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.util.List;
 
 public class TestHome extends WebAPI {
 
@@ -45,12 +46,12 @@ public class TestHome extends WebAPI {
     public void viewTwitterPage(){hp.getTwitterPage();}
     @Test
     public void viewYoutubePage(){hp.navigateToYoutubePage();}
-    /*@Test
+    @Test
     public void webElementName(){
         List actual = hp.webElementList();
         List expected = hp.expectedWebElement();
         Assert.assertEquals(actual,expected);
-    }*/
+    }
 
 
 

@@ -1,24 +1,23 @@
 package homepage;
 
 import common.WebAPI;
-
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import static webelements.at_tWebelements.*;
 
-//first extend the WebAPI
+
 public class at_tHomePage extends WebAPI {
-    // using Findbyannotation which is under selinium
-    // must import Webelements
-
-
-
-    @FindBy(how = How.CSS, using = searchbox )
+    @FindBy(how = How.XPATH, using = searchbox )
     WebElement usersearchbox;
     @FindBy(how = How.CSS, using = clicksearchbutton )
     WebElement clickonsearchbutton;
@@ -28,52 +27,166 @@ public class at_tHomePage extends WebAPI {
     WebElement webelementofiphoneimage;
     @FindBy(how = How.CSS, using = pricingoptions)
     WebElement webElementpricingoptions;
+    @FindBy(how= How.CSS,using = hoverOnMenu)
+    WebElement MenuElement;
+    @FindBy(how=How.XPATH,using=InternetElement)
+    WebElement netElement;
+    @FindBy(how=How.XPATH,using=ExploretElement)
+    WebElement ExploreNetElement;
+    @FindBy(how=How.CSS,using=imageElement)
+    WebElement clickOnImageelement;
+    @FindBy(how=How.CSS,using=popUpElement)
+    WebElement PopUpWebElement;
+    @FindBy(how=How.CSS,using=accountElement)
+    WebElement accountWebElement;
+    @FindBy(how=How.CSS,using=clickOnDropButton)
+    WebElement dropButtonWebElement;
+    @FindBy(how = How.XPATH, using = dealsupdate)
+    WebElement getDealsUpdate;
+    @FindBy(how = How.XPATH, using = signmeup)
+    WebElement userSignmeUp;
+    @FindBy(how = How.XPATH, using = upgrade)
+    WebElement checkUpgrade;
+    @FindBy(how = How.XPATH, using = menuoption)
+    WebElement checkmenuoption;
+    @FindBy(how = How.XPATH, using = shopiphone)
+    WebElement useshopiphone;
+    @FindBy(how = How.XPATH, using = Bundles)
+    WebElement useBundles;
+    @FindBy(how = How.XPATH, using = Business)
+    WebElement useBusiness;
+    @FindBy(how = How.XPATH, using = tv)
+    WebElement usetv;
+    @FindBy(how = How.XPATH, using = forDealsUrl)
+    WebElement useforDealsUrl;
+    @FindBy(how = How.XPATH, using = prepaidUrl)
+    WebElement useprepaidUrl;
+
+    public static void findBrokenLink() {
+        List<WebElement> links = driver.findElements(By.tagName("a"));
+        System.out.println("Total links are " + links.size());
+        for (int i = 0; i < links.size(); i++) {
+            WebElement ele = links.get(i);
+            String url = ele.getAttribute("href");
+            verifyLinkActive(url);
+        }
+    }
+    public static void verifyLinkActive(String linkUrl) {
+        try {
+            URL url = new URL(linkUrl);
+            HttpURLConnection httpURLConnect = (HttpURLConnection) url.openConnection();
+            httpURLConnect.setConnectTimeout(3000);
+            httpURLConnect.connect();
+            if (httpURLConnect.getResponseCode() == 200) {
+                System.out.println(linkUrl + " - " + httpURLConnect.getResponseMessage());
+            }
+            if (httpURLConnect.getResponseCode() == HttpURLConnection.HTTP_NOT_FOUND) {
+                System.out.println(linkUrl + " - " + httpURLConnect.getResponseMessage() + " - " + HttpURLConnection.HTTP_NOT_FOUND);
+            }
+        } catch (Exception e) {
+        }
+    }
+    { driver.manage().window().maximize(); }
+
+    public void Enter() {
+        Actions dropdown = new Actions(driver);
+        dropdown.sendKeys(Keys.ENTER).perform();
+    }
 
 
-
-    //initialize and import webelements
-
-
-    // created a method for searchbox
     public void usersearchbox(){
-       driver.get(url);
         usersearchbox.sendKeys("AT&T deals");
+
     }
     public void searchclickbutton(){
-        clickonsearchbutton.click();
+        clickonsearchbutton.sendKeys("ultra");
+        Enter();
     }
 
-    //Scrolldownwebpage
+
     public void scrolldownwebpage(){
         JavascriptExecutor scroll = (JavascriptExecutor)driver;
         scroll.executeScript("window.scrollBy(0, 2000)");
 
     }
-    //ScrolltoEnd
+
     public void scrolltoend() throws InterruptedException {
         JavascriptExecutor scrollend = (JavascriptExecutor)driver;
         scrollend.executeScript("window.scrollTo(10, document.body.scrollHeight");
-    //  driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         Thread.sleep(2000);
 
     }
-    // accountlog in
+
     public void clickaccountlogin() {
         useraccountlogin.click();
 
     }
-    //clickoniphoneimage
+
     public void clickoniphoneimage() {
         webelementofiphoneimage.click();
 
     }
-    //iphonepricing option
+
     public void selectpricingoption(){
-        driver.get("https://www.att.com/buy/phones/apple-iphone-11-64gb-purple.html?offerid=13700004");
+        useshopiphone.click();
         webElementpricingoptions.click();
         Select prcoption = new Select(driver.findElement(By.xpath(pricingoptions)));
         prcoption.selectByIndex(1);
 
     }
+    public void hoveringOnMenuElement() {
+        mouseHoverByCSS("hoverOnMenu");
+        mouseHoverByXpath("InternetElement");
+        mouseHoverByXpath("ExploretElement") ;  }
+
+    public void UserclickOnImageelement(){
+        useforDealsUrl.click();
+        clickOnImageelement.click();
+        String title= driver.getTitle();
+        System.out.println(title);
+        Assert.assertEquals(driver.getTitle(),driver.getTitle());
+    }
+    public void handleAlert(){
+        useprepaidUrl.click();
+        Alert alt =driver.switchTo().alert();
+        alt.accept();
+    }
+    public void userDealsUpdate() throws InterruptedException {
+        getDealsUpdate.sendKeys("evasharmin@yahoo.com");
+        userSignmeUp.click();
+    }
+    public void checkUpgrade(){
+        checkUpgrade.click();
+    }
+    public void menuOption(){
+        checkmenuoption.click();
+        Select option = new Select(driver.findElement(By.xpath(menuoption)));
+        option.selectByIndex(1);
+    }
+    public void usebundle(){
+        useBundles.click();
+    }
+    public void UseBusiness(){
+        useBusiness.click();
+    }
+    public void useTV(){
+        usetv.click();
+    }
+    public void searchitems(){
+    }
+    public void getBrokenLink() {
+        findBrokenLink();
+    }
+    public void enterKeyWord(String keyword){
+    }
+    public void searchItemsFromXlsx(String Items){
+        usersearchbox.sendKeys(Items);
+    }
+    public void searchtemsFromDB(String keyword){
+        enterKeyWord(keyword);
+        Enter();
+    }
+
 
 }

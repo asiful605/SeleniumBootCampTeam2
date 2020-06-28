@@ -16,12 +16,13 @@
 
 
 
-    <test name="HBOHomePage">
+<!--    <test name="HBOHomePage">-->
 
 
-<!--    <test name = "Test">-->
+    <test name = "Test">
         <classes>
             <class name="hometest.HBOHomePageTest"></class>
+            <class name="hometest.HBOPagesTest"></class>
             <class name="web.TestHome"/>
 <!--            <class name="web.TestCreateAccount"/>-->
 <!--            <class name="web.TestFreeEpisodes"/>-->
@@ -31,15 +32,9 @@
 <!--            <class name="TestSearch.TestGoogleSheet"/>-->
 <!--            <class name="web.TestSports"/>-->
 
-
-
-
         </classes>
 
     </test>
-
-
-
 
 </suite>
 

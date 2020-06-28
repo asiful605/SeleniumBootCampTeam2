@@ -9,12 +9,10 @@ import reporting.TestLogger;
 public class SportsPage extends WebAPI {
     @FindBy (xpath = "/html/body/main/div[1]/div/div/header/div[1]/div/div[2]/div/div/ul/li[4]/div/a")
     public WebElement sports;
-
     @FindBy (xpath = "//div[@class='components/CardText--title']")
     public WebElement theShop;
     @FindBy (xpath = "//div[@class='__player-placeholder-play-button']")
     public WebElement playTheShop;
-
     @FindBy (xpath = "/html/body/main/div[2]/div/div/div[1]/section/div/div/div/div[2]/a/div[1]/img")
     public WebElement realSports;
     @FindBy (linkText = "HBO Boxing")
@@ -23,20 +21,16 @@ public class SportsPage extends WebAPI {
     public WebElement caneloVsGolovkin;
     @FindBy (xpath = "//div[@class='__player-placeholder-play-button']")
     public WebElement playFight1;
-
     @FindBy (xpath = "//img[@alt='The Fight Game with Jim Lampley']")
     public WebElement theFightGame;
-
     @FindBy (xpath = "/html/body/main/div[10]/div/div/div[1]/div[2]/div[2]/div/div[3]/div/div[2]/a/span/span/span")
     public WebElement deadliestSports;
-
     @FindBy (xpath = "/html/body/main/div[9]/div/div/div[1]/div[2]/div[2]/div/div[2]/div/div[2]/a/span/span/span")
     public  WebElement slavesNoMore;
 
     public void enterSportsPage (){
         TestLogger.log(getClass().getSimpleName()+":"+convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         sports.click();}
-
     public void watchTheShop() {
         TestLogger.log(getClass().getSimpleName()+":"+convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         sports.click();

@@ -29,52 +29,52 @@ public class HomePage extends WebAPI {
     public  WebElement searchButton;
     public  WebElement getSearchButton() {return searchButton;}
     public void clickOnSearchButton () {
-        TestLogger.log(getClass().getSimpleName()+":"+convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
+        testLogger();
         getSearchButton().click();}
 
-    @FindBy (how = How.XPATH, using = "/html/body/main/div[1]/div/div/header/div[1]/div/div[3]/div/a/span")
+    @FindBy (how = How.XPATH, using = "//span[contains(text(),'Get HBO')]")
     public  WebElement getHBO;
     public  WebElement getGetHBO() {return getHBO;}
     public void clickonGetHBO () {
-        TestLogger.log(getClass().getSimpleName()+":"+convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
+        testLogger();
         getGetHBO().click(); }
 
-    @FindBy (how = How.XPATH, using = "//div[@class='bands/MainNavigation--stickyBar']//span[@class='components/Tooltip--label']")
+    @FindBy (how = How.XPATH, using = "//span[@class='components/Tooltip--label']")
     public WebElement signIn;
     public WebElement getSignIn() {return signIn;}
     public void clickOnSignIn() {
-        TestLogger.log(getClass().getSimpleName()+":"+convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
+        testLogger();
         getSignIn();}
 
     @FindBy (xpath = "/html/body/main/div[1]/div/div/header/div[1]/div/div[1]/span/a/svg/g/g/path")
     public WebElement HBOLogo;
     public void clickOnLogo () {
-        TestLogger.log(getClass().getSimpleName()+":"+convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
+        testLogger();
         HBOLogo.click(); }
 
     @FindBy(xpath = "//div[contains(@class,'bands/MainNavigation--searchIcon')]")
     public WebElement searchlink;
     public void clicksearchlink(){
-        TestLogger.log(getClass().getSimpleName()+":"+convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
+        testLogger();
         searchlink.click();
     }
     @FindBy(xpath = "//input[@placeholder='Search']")
     public WebElement searchBox;
     public void sendInput () {
-        TestLogger.log(getClass().getSimpleName()+":"+convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
+        testLogger();
         searchBox.sendKeys("Game of Thrones", Keys.ENTER);
     }
 
     @FindBy(css = ".bands\\/MainNavigation--topBar [href='\\/series']")
     public WebElement series;
     public void findSeries(){
-        TestLogger.log(getClass().getSimpleName()+":"+convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
+        testLogger();
         series.click();}
 
     @FindBy(css = ".bands\\/MainNavigation--topBar [href='\\/movies']")
     public WebElement movies;
     public String findMovies(){
-        TestLogger.log(getClass().getSimpleName()+":"+convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
+        testLogger();
         movies.click();
         String title = driver.getTitle();
         System.out.println("Movies page Title: " + title);
@@ -83,41 +83,55 @@ public class HomePage extends WebAPI {
     @FindBy(css = ".bands\\/MainNavigation--topBar [href='\\/watch-free-episodes']")
     public WebElement searchFreeEpisodes;
     public void getFreeEpisodes(){
-        TestLogger.log(getClass().getSimpleName()+":"+convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
+        testLogger();
         searchFreeEpisodes.click();}
 
     @FindBy (className = "components/BasicButton--children")
     public WebElement HBOToday;
     public void clickHBOToday(){
-        TestLogger.log(getClass().getSimpleName()+":"+convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
+        testLogger();
         HBOToday.click();}
 
+    @FindBy (xpath = "//h2[contains(text(),'New Releases')]")
+    public WebElement NewReleases;
+    public void clickNewReleases(){
+        testLogger();
+        NewReleases.click();}
+
     @FindBy (xpath = "/html/body/main/div[6]/div/div/div[1]/div[2]/div/button[2]/div/span/span/svg/g/g/g/polygon")
+    public WebElement nextSl;
+    public void clickNextSl(){
+        testLogger();
+        nextSl.click();}
+
+    @FindBy (xpath = "//*[@id=\"root\"]/main/section/div[1]/div/section/div/button[2]/div/span/span/svg/g/g/g/polygon")
     public WebElement nextSlide;
-    public void clickNextSlide(){nextSlide.click();}
+    public void clickNextSlide(){
+        testLogger();
+        nextSlide.click();}
 
     @FindBy (xpath = "//a[@title='facebook']")
     public WebElement fbPage;
     public void getFbPage(){
-        TestLogger.log(getClass().getSimpleName()+":"+convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
+        testLogger();
         fbPage.click();}
 
     @FindBy (xpath = "//a[@title='instagram']")
     public WebElement instaPage;
     public void getInstaPage(){
-        TestLogger.log(getClass().getSimpleName()+":"+convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
+        testLogger();
         instaPage.click();}
 
     @FindBy (xpath = "//a[@title='twitter']")
     public WebElement twitterLogo;
     public void getTwitterPage(){
-        TestLogger.log(getClass().getSimpleName()+":"+convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
+        testLogger();
         twitterLogo.click();}
 
     @FindBy (xpath = "//a[@title='youtube']")
     public WebElement youtubeLogo;
     public void navigateToYoutubePage(){
-        TestLogger.log(getClass().getSimpleName()+":"+convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
+        testLogger();
         youtubeLogo.click();}
 
     public List webElementList(){
@@ -155,6 +169,15 @@ public class HomePage extends WebAPI {
         }
         System.out.println(expect);
         return expect;
+    }
+
+
+    /*
+    Helping
+    method for TestLogger
+     */
+    public void testLogger(){
+        TestLogger.log(getClass().getSimpleName()+":"+convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
     }
 
 

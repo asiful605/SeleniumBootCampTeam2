@@ -6,7 +6,6 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import search.DatabaseOperation;
-
 import java.util.List;
 
 public class TestDB extends WebAPI {
@@ -20,15 +19,5 @@ public class TestDB extends WebAPI {
         List actual = databaseOperation.getUserDatafromDB();
         List expected = databaseOperation.getHeadersValue1();
         Assert.assertEquals(actual,expected);
-
     }
-
-
-
-
-
-
-
-
-
 }

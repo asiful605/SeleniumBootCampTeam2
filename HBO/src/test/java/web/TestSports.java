@@ -1,5 +1,4 @@
 package web;
-
 import basic.SportsPage;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeMethod;

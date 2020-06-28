@@ -21,63 +21,10 @@
             <class name="hometest.at_tHomeTest"/>
             <!--            <class name="testsupportpage.TestSupportPage"></class>-->
             <!--            <class name="testhome.TestHomePage"/>-->
-            <!--            <class name="testhome.TestHomePage"/>-->
-            <!--            <class name="testhome.TestHomePage"/>-->
-            <!--            <class name="testhome.TestHomePage"/>-->
-            <!--            <class name="testhome.TestHomePage"/>-->
-            <!--            <class name="testhome.TestHomePage"/>-->
+
 
         </classes>
 
     </test>
-
-
-    <!--<test name = "Amex Home">-->
-    <!--<parameter name="useCloudEnv" value="false"/>-->
-    <!--<parameter name="cloudEnvName" value="browserstack"/>-->
-    <!--&lt;!&ndash;<parameter name="cloudEnvName" value="saucelab"/>&ndash;&gt;-->
-    <!--<parameter name="os" value="windows"/>-->
-    <!--&lt;!&ndash;<parameter name="os" value="OS X"/>&ndash;&gt;-->
-    <!--<parameter name="os_version" value="10"/>-->
-    <!--&lt;!&ndash;<parameter name="os_version" value="Sierra"/>&ndash;&gt;-->
-    <!--<parameter name="browserName" value="chrome"/>-->
-    <!--<parameter name="browserVersion" value="77"/>-->
-    <!--<parameter name="url" value="https://www.americanexpress.com/"/>-->
-    <!--<classes>-->
-    <!--&lt;!&ndash;<class name="page.objects.test.TestHomePage"/>&ndash;&gt;-->
-    <!--&lt;!&ndash;<class name="page.objects.test.TestSearch"/>&ndash;&gt;-->
-    <!--&lt;!&ndash;<class name="page.objects.test.TestLogin"/>&ndash;&gt;-->
-    <!--&lt;!&ndash;<class name="page.objects.test.TestBookATrip"/>&ndash;&gt;-->
-
-
-    <!--&lt;!&ndash;<class name="page.objects.test.TestHelp"/>&ndash;&gt;-->
-
-
-    <!--</classes>-->
-    <!--</test>-->
-
-    <!--<test name = "Amex Home using FirefoxBrowser">-->
-    <!--<parameter name="useCloudEnv" value="false"/>-->
-    <!--<parameter name="cloudEnvName" value="browserstack"/>-->
-    <!--&lt;!&ndash;<parameter name="cloudEnvName" value="saucelab"/>&ndash;&gt;-->
-    <!--<parameter name="os" value="windows"/>-->
-    <!--&lt;!&ndash;<parameter name="os" value="OS X"/>&ndash;&gt;-->
-    <!--<parameter name="os_version" value="10"/>-->
-    <!--&lt;!&ndash;<parameter name="os_version" value="Sierra"/>&ndash;&gt;-->
-    <!--<parameter name="browserName" value="firefox"/>-->
-    <!--<parameter name="browserVersion" value="77"/>-->
-    <!--<parameter name="url" value="https://www.americanexpress.com/"/>-->
-    <!--<classes>-->
-    <!--&lt;!&ndash;<class name="page.objects.test.TestHomePage"/>&ndash;&gt;-->
-    <!--&lt;!&ndash;<class name="page.objects.test.TestSearch"/>&ndash;&gt;-->
-    <!--&lt;!&ndash;<class name="page.objects.test.TestLogin"/>&ndash;&gt;-->
-    <!--&lt;!&ndash;<class name="page.objects.test.TestBookATrip"/>&ndash;&gt;-->
-
-
-    <!--&lt;!&ndash;<class name="page.objects.test.TestHelp"/>&ndash;&gt;-->
-    <!---->
-    <!--</classes>-->
-    <!--</test>-->
-
 
 </suite>
