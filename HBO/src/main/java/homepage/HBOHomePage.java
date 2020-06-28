@@ -1,4 +1,9 @@
 package homepage;
 
-public class HBOHomePage {
+import common.WebAPI;
+
+public class HBOHomePage extends WebAPI {
+
+
+
 }

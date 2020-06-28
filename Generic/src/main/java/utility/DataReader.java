@@ -4,8 +4,8 @@ import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.apache.poi.ss.usermodel.*;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -61,25 +61,41 @@ public class DataReader {
         return data;
     }
 
+    static Workbook book;
+    static Sheet LogIn;
+    public static String path="/Users/tanjinarahman/IdeaProjects/SeleniumBootCampTeam2/BankOfAmerica/DataTest/BoaUsername.xlsx";
+
+    public  Object[][] fileReader3(String sheetName) throws IOException, InvalidFormatException {
+        File file = new File(path);
+        book = WorkbookFactory.create(file);
+        LogIn = book.getSheet(sheetName);
+        Object[][] data = new Object[LogIn.getLastRowNum()][LogIn.getRow(0).getLastCellNum()];
+
+        for (int i = 0; i < LogIn.getLastRowNum(); i++) {
+            for (int j=0; j< LogIn.getRow(0).getLastCellNum(); j++){
+                data[i][j]= LogIn.getRow(i+1).getCell(j).toString();
+            }
+        }
+        return data;
+    }
+
     public String getCellValue(HSSFCell cell) {
         Object value = null;
 
-        int dataType = cell.getCellType();
+        CellType dataType = cell.getCellType();
         switch (dataType) {
-            case HSSFCell.CELL_TYPE_NUMERIC:
+            case NUMERIC:
                 value = cell.getNumericCellValue();
                 break;
-            case HSSFCell.CELL_TYPE_STRING:
+            case STRING:
                 value = cell.getStringCellValue();
                 break;
-            case HSSFCell.CELL_TYPE_BOOLEAN:
+            case BOOLEAN:
                 value = cell.getBooleanCellValue();
                 break;
         }
         return value.toString();
-
     }
-
 
     public void writeBack(String value) throws IOException {
         wb = new HSSFWorkbook();

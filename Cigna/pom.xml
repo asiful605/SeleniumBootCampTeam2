@@ -42,7 +42,7 @@
                 <version>3.0.0-M4</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <!--                        <suiteXmlFile>target/test-classes/AmazonTestRunner.xml</suiteXmlFile>-->
+                        <suiteXmlFile>target/test-classes/CignaTestRunner.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>

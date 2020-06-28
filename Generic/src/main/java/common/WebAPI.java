@@ -20,7 +20,6 @@ import org.testng.ITestResult;
 import org.testng.annotations.*;
 import reporting.ExtentManager;
 import reporting.ExtentTestManager;
-
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -101,8 +100,8 @@ public class WebAPI {
 
     //Browser SetUp
     public static WebDriver driver = null;
-    public String browserstack_username = "kahinachafai1";
-    public String browserstack_accesskey = "B8GCh6kyYSxRbGv1xJCM";
+    public String browserstack_username = "mhshahib1";
+    public String browserstack_accesskey = "YA4xsqrMqFurrGduX1X9";
     public String saucelabs_username = "";
     public String saucelabs_accesskey = "";
 
@@ -124,8 +123,12 @@ public class WebAPI {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         //driver.manage().timeouts().pageLoadTimeout(25, TimeUnit.SECONDS);
         driver.get(url);
-        //driver.manage().window().maximize();
+        driver.manage().window().maximize();
     }
+    public void implicitwait(){
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    }
+
 
     public WebDriver getLocalDriver(@Optional("mac") String OS, String browserName) {
 
@@ -251,6 +254,9 @@ public class WebAPI {
         }
     }
 
+    public void windowMaximize(){
+        driver.manage().window().maximize();
+    }
     public void clearField(String locator) {
         driver.findElement(By.id(locator)).clear();
     }
@@ -324,6 +330,22 @@ public class WebAPI {
     public void clickByXpath(String locator) {
         driver.findElement(By.xpath(locator)).click();
     }
+    public void clickByCSS(String locator) {
+        driver.findElement(By.cssSelector(locator)).click();
+    }
+    public void clickByLinkText(String locator){
+        driver.findElement(By.cssSelector(locator)).click();
+    }
+    public void clickByID(String locator){
+        driver.findElement(By.cssSelector(locator)).click();
+    }
+    // For checkbox
+    public void checkBoxSelectedByCSS(String locator){
+        driver.findElement(By.cssSelector(locator)).isSelected();
+    }
+    public void checkBoxSelectedByXpath(String locator){
+        driver.findElement(By.cssSelector(locator)).isSelected();
+    }
 
     public void typeByCss(String locator, String value) {
         driver.findElement(By.cssSelector(locator)).sendKeys(value);
@@ -336,7 +358,9 @@ public class WebAPI {
     public void typeByXpath(String locator, String value) {
         driver.findElement(By.xpath(locator)).sendKeys(value);
     }
-
+    public void typeByID(String locator, String value){
+        driver.findElement(By.xpath(locator)).sendKeys(value);
+    }
     public void takeEnterKeys(String locator) {
         driver.findElement(By.cssSelector(locator)).sendKeys(Keys.ENTER);
     }
@@ -430,6 +454,11 @@ public class WebAPI {
         select.selectByVisibleText(value);
     }
 
+    public void selectOptionByIndex(WebElement element, String value) {
+        Select select = new Select(element);
+        select.selectByVisibleText(value);
+    }
+
     public static void sleepFor(int sec) throws InterruptedException {
         Thread.sleep(sec * 1000);
     }
@@ -474,7 +503,6 @@ public class WebAPI {
         Alert alert = driver.switchTo().alert();
         alert.dismiss();
     }
-
     //iFrame Handle
     public void iframeHandle(WebElement element) {
         driver.switchTo().frame(element);
@@ -602,6 +630,14 @@ public class WebAPI {
         String text = webElement.getText();
         return text;
     }
+    public void scrollDownTheWebPage() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,1000)");
+    }
 
+    public void scrollDownTillEnd() {
+        JavascriptExecutor js1 = (JavascriptExecutor) driver;
+        js1.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+    }
 
 }

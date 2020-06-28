@@ -10,7 +10,6 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>Generic</module>
-        <module>Amazon</module>
         <module>HBO</module>
         <module>at_t</module>
         <module>GEICO</module>
@@ -19,6 +18,7 @@
         <module>Expedia</module>
         <module>Delta_Airline</module>
         <module>Ebay</module>
+        <module>TripAdvisor</module>
     </modules>
 
 
@@ -79,14 +79,14 @@
             <dependency>
                 <groupId>org.apache.poi</groupId>
                 <artifactId>poi</artifactId>
-                <version>3.17</version>
+                <version>4.1.2</version>
             </dependency>
 
             <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
             <dependency>
                 <groupId>org.apache.poi</groupId>
                 <artifactId>poi-ooxml</artifactId>
-                <version>3.17</version>
+                <version>4.1.2</version>
             </dependency>
 
             <!--Extent Report-->
@@ -145,7 +145,8 @@
                         <!-- <suiteXmlFiles>target/test-classes/AmazonTestRunner.xml</suiteXmlFiles>-->
                         <!--<suiteXmlFiles>target/test-classes/CNNTestRunner.xml</suiteXmlFiles>  -->
                         <!--<suiteXmlFiles>target/test-classes/BBCTestRunner.xml</suiteXmlFiles>  -->
-                        <suiteXmlFiles>target/test-classes/Delta_AirlineTestRunner.xml</suiteXmlFiles>
+<!--                        <suiteXmlFiles>target/test-classes/Delta_AirlineTestRunner.xml</suiteXmlFiles>-->
+                        <suiteXmlFiles>target/test-classes/CignaTestRunner.xml</suiteXmlFiles>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
