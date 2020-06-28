@@ -66,7 +66,10 @@ public class Delta_AirlineHomePage extends WebAPI {
        inputKeyWord("check-in");
 
    }
-
+    public void searchInputButton(){
+        clickHandleCookies();
+        clickSearchInput();
+    }
 
 
 

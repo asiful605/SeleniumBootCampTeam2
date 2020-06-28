@@ -14,3 +14,8 @@ public class Delta_airlineHomePageWebElements {
     public static final String searchInputWebElement="/html/body/app-root/app-home/ngc-global-nav/header/div/nav/div/div[2]/ngc-search/div/a";
     public static final String keyWordInputWebElement="#search_input";
 }
+
+
+
+
+

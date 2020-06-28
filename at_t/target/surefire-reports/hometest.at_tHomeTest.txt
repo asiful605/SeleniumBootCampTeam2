@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: hometest.at_tHomeTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 2, Errors: 0, Skipped: 3, Time elapsed: 5.269 s <<< FAILURE! - in hometest.at_tHomeTest
+hometest.at_tHomeTest.setUp  Time elapsed: 4.472 s  <<< FAILURE!
+java.lang.IllegalStateException: The driver is not executable: /Users/nafisshamsuzzoha/SeleniumBootCampTeam2/at_t/../Generic/BrowserDriver/windows/chromedriver.exe
+
+hometest.at_tHomeTest.cleanUp  Time elapsed: 0 s  <<< FAILURE!
+java.lang.NullPointerException
+
