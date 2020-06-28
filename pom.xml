@@ -10,14 +10,13 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>Generic</module>
-        <module>HBO</module>
-        <module>at_t</module>
         <module>GEICO</module>
-        <module>Cigna</module>
         <module>BankOfAmerica</module>
         <module>Expedia</module>
         <module>Delta_Airline</module>
         <module>Ebay</module>
+        <module>att</module>
+
     </modules>
 
 

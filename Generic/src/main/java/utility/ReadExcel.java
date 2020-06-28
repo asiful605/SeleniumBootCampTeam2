@@ -10,16 +10,10 @@ import java.io.IOException;
 import java.util.Iterator;
 
 public class ReadExcel {
-
     private static final String FILE_NAME = System.getProperty("user.dir") + "/DataTest/TestExcelFile.xlsx";
-
-
 
     /**
      * This method is to read Excel file based on sheet Index Number
-     *
-     *
-     *
      *
      */
     public static void readExcelFile() {
@@ -53,8 +47,5 @@ public class ReadExcel {
         }
 
     }
-
-
-
 
 }

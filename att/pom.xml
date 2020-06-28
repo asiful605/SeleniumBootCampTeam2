@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>BankOfAmerica</artifactId>
+    <artifactId>att</artifactId>
 
     <dependencies>
 
@@ -18,15 +18,8 @@
             <artifactId>Generic</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-core</artifactId>
-            <version>1.0.13</version>
-            <scope>test</scope>
-        </dependency>
 
     </dependencies>
-
 
     <build>
 
@@ -52,7 +45,6 @@
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
-
 
         </plugins>
 

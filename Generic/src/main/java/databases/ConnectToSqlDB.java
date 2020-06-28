@@ -238,4 +238,7 @@ public class ConnectToSqlDB {
             System.out.println(user.getStName() + " " + user.getStID()+ " " + user.getStDOB());
         }
     }
+    //for insert data
+    public void insertStringDataFromArrayListToSqlTable(List<String> list, String search_items, String itemlists) {
+    }
 }
