@@ -24,6 +24,7 @@ public class InternetPurchase extends WebAPI {
     }
     public void shopAllOfferClick() {
         clickinternet.click();
+        handleWindow();
         useshopalloffers.click();
     }
     public void enteradressfield() {
@@ -34,6 +35,7 @@ public class InternetPurchase extends WebAPI {
     public void Baddresscheckbox()  {
         clickinternet.click();
         useshopalloffers.click();
+        handleWindow();
         enteradressfield.sendKeys("154 10th St, Brooklyn, NY 11215");
         checklistclick.isSelected();
         checkcheckavail.click();

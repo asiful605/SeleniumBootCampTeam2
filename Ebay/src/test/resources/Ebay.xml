@@ -17,12 +17,6 @@
     <test name="EbayHomePage">
         <classes>
             <class name="hometest.EbayHomeTest"></class>
-
         </classes>
-
     </test>
-
-
-
-
 </suite>

@@ -623,12 +623,10 @@ public class WebAPI {
             }
         }
     }
-
     public static void Enter() {
         Actions drpdown = new Actions(driver);
         drpdown.sendKeys(Keys.ENTER).perform();
     }
-
     public static void navigateurl(String url) {
         driver.navigate().to(url);
     }
@@ -701,23 +699,19 @@ public class WebAPI {
         act.dragAndDrop(From, To).build().perform();
     }
     public void checkBoxSelectedByCSS(String locator){
-
         driver.findElement(By.cssSelector(locator)).isSelected();
     }
     public void checkBoxSelectedByXpath(String locator){
 
         driver.findElement(By.cssSelector(locator)).isSelected();
-
     }
     public void clickByLinkText(String locator){
 
         driver.findElement(By.cssSelector(locator)).click();
-
     }
     public void typeByID(String locator, String value){
 
         driver.findElement(By.xpath(locator)).sendKeys(value);
-
     }
     public void clickByID(String locator){
 

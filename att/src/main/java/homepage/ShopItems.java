@@ -55,6 +55,7 @@ public class ShopItems extends WebAPI {
     }
     public void clickAccessories(){
         usewireless.click();
+        refreshPage();
         findAccessories.click();
     }
     public void clickWirelessDeals() {
@@ -71,6 +72,7 @@ public class ShopItems extends WebAPI {
     }
     public void clickColor(){
         usewireless.click();
+        switchToNewWindow();
         shopNow.click();
         chooseColor.click();
     }

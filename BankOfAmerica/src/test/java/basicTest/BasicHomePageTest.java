@@ -1,6 +1,5 @@
 package basicTest;
 
-import basic.BasicHomePage;
 import common.WebAPI;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
