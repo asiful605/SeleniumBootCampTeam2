@@ -1,6 +1,6 @@
 package hometest;
 
-import homepage2.EbayHomeLinks;
+import Homepage.EbayHomeLinks;
 import org.testng.annotations.Test;
 import reporting.TestLogger;
 

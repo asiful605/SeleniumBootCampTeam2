@@ -1,7 +1,7 @@
 package hometest;
 
 import common.WebAPI;
-import homepage2.EbayHomePage;
+import Homepage.EbayHomePage;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 import reporting.TestLogger;
@@ -16,6 +16,7 @@ public class EbayHomeTest extends WebAPI {
         EbayHomePage ebayHomePage = PageFactory.initElements(driver, EbayHomePage.class);
         ebayHomePage.testingSearchBar();
     }
+
     @Test
     public void ebayEletronicTest() {
         TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
@@ -23,6 +24,7 @@ public class EbayHomeTest extends WebAPI {
         EbayHomePage ebayHomePage = PageFactory.initElements(driver, EbayHomePage.class);
         ebayHomePage.testingHeaderOnElectronic();
     }
+
     @Test
     public void ebayIconTest() throws InterruptedException {
         TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
@@ -30,7 +32,8 @@ public class EbayHomeTest extends WebAPI {
         EbayHomePage ebayHomePage = PageFactory.initElements(driver, EbayHomePage.class);
         ebayHomePage.dropDownTest();
     }
-   // @Test
+
+    // @Test
     public void ebayAddingItemToCart() {
         TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
         }.getClass().getEnclosingMethod().getName()));
@@ -38,13 +41,14 @@ public class EbayHomeTest extends WebAPI {
         ebayHomePage.addToCart();
     }
 
-   // @Test
+    // @Test
     public void ebayBuyOption() throws InterruptedException {
         TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
         }.getClass().getEnclosingMethod().getName()));
         EbayHomePage ebayHomePage = PageFactory.initElements(driver, EbayHomePage.class);
         ebayHomePage.buyItemOption();
     }
+
     //search for a laptop
     @Test
     public void searchLaptop() {
@@ -68,6 +72,7 @@ public class EbayHomeTest extends WebAPI {
         EbayHomePage ebayHomePage = PageFactory.initElements(driver, EbayHomePage.class);
         ebayHomePage.motorsPage();
     }
+
     @Test
     public void ebayTvAndAudioTest() {
         TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
@@ -75,6 +80,7 @@ public class EbayHomeTest extends WebAPI {
         EbayHomePage ebayHomePage = PageFactory.initElements(driver, EbayHomePage.class);
         ebayHomePage.tvAndAudioPage();
     }
+
     @Test
     public void userSiteSportPage() {
         TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
@@ -82,37 +88,46 @@ public class EbayHomeTest extends WebAPI {
         EbayHomePage ebayHomePage = PageFactory.initElements(driver, EbayHomePage.class);
         ebayHomePage.ebayHuntingPage();
     }
-  //  @Test
+
+    //  @Test
     public void ebayHelpAndContact() {
         TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
         }.getClass().getEnclosingMethod().getName()));
         EbayHomePage ebayHomePage = PageFactory.initElements(driver, EbayHomePage.class);
         ebayHomePage.userHelpPage();
     }
+
     @Test
-    public void ebayCatagoriesList(){
+    public void ebayCatagoriesList() {
         TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
         }.getClass().getEnclosingMethod().getName()));
         EbayHomePage ebayHomePage = PageFactory.initElements(driver, EbayHomePage.class);
-        ebayHomePage.userCatagories(); }
+        ebayHomePage.userCatagories();
+    }
+
     @Test
     public void ebayAddToCart() throws InterruptedException {
         TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
         }.getClass().getEnclosingMethod().getName()));
         EbayHomePage ebayHomePage = PageFactory.initElements(driver, EbayHomePage.class);
-        ebayHomePage.userAddBookToCart(); }
+        ebayHomePage.userAddBookToCart();
+    }
+
     @Test
-    public void userLocates(){
+    public void userLocates() {
         TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
         }.getClass().getEnclosingMethod().getName()));
         EbayHomePage ebayHomePage = PageFactory.initElements(driver, EbayHomePage.class);
-        ebayHomePage.userLocateItem(); }
+        ebayHomePage.userLocateItem();
+    }
+
     @Test
-    public void userClickEbayInfo(){
+    public void userClickEbayInfo() {
         TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
         }.getClass().getEnclosingMethod().getName()));
         EbayHomePage ebayHomePage = PageFactory.initElements(driver, EbayHomePage.class);
-        ebayHomePage.EbayInfo(); }
+        ebayHomePage.EbayInfo();
+    }
 //    @Test
 //    public void UserAddPhoneToCart() throws InterruptedException {
 //        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
@@ -120,56 +135,87 @@ public class EbayHomeTest extends WebAPI {
 //        EbayHomePage ebayHomePage = PageFactory.initElements(driver, EbayHomePage.class);
 //        ebayHomePage.EbayCartIcon();
 
-//    }
+    //    }
     @Test
-    public void userClickFashion(){
+    public void userClickFashion() {
         TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
         }.getClass().getEnclosingMethod().getName()));
         EbayHomePage ebayHomePage = PageFactory.initElements(driver, EbayHomePage.class);
-        ebayHomePage.clickFashion(); }
-    @Test
-    public void userSearchBarTest(){
-        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
-        }.getClass().getEnclosingMethod().getName()));
-        EbayHomePage ebayHomePage = PageFactory.initElements(driver, EbayHomePage.class);
-        ebayHomePage.EbayMultiSearch(); }
-    @Test
-    public void userCatagoryList(){
-        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
-        }.getClass().getEnclosingMethod().getName()));
-        EbayHomePage ebayHomePage = PageFactory.initElements(driver, EbayHomePage.class);
-        ebayHomePage.ebayShoppingCatagory(); }
-        @Test
-        public void UserSearchProduct(){
-            TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
-            }.getClass().getEnclosingMethod().getName()));
-            EbayHomePage ebayHomePage = PageFactory.initElements(driver, EbayHomePage.class);
-            ebayHomePage.SearchItem(); }
-@Test
-    public void UserEbayDiverse(){
-    TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
-    }.getClass().getEnclosingMethod().getName()));
-    EbayHomePage ebayHomePage = PageFactory.initElements(driver, EbayHomePage.class);
-    ebayHomePage.ebayDiversityPage();
+        ebayHomePage.clickFashion();
     }
+
     @Test
-    public void UserFindTv(){
+    public void userSearchBarTest() {
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
+        }.getClass().getEnclosingMethod().getName()));
+        EbayHomePage ebayHomePage = PageFactory.initElements(driver, EbayHomePage.class);
+        ebayHomePage.EbayMultiSearch();
+    }
+
+    @Test
+    public void userCatagoryList() {
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
+        }.getClass().getEnclosingMethod().getName()));
+        EbayHomePage ebayHomePage = PageFactory.initElements(driver, EbayHomePage.class);
+        ebayHomePage.ebayShoppingCatagory();
+    }
+
+    @Test
+    public void UserSearchProduct() {
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
+        }.getClass().getEnclosingMethod().getName()));
+        EbayHomePage ebayHomePage = PageFactory.initElements(driver, EbayHomePage.class);
+        ebayHomePage.SearchItem();
+    }
+
+    @Test
+    public void UserEbayDiverse() {
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
+        }.getClass().getEnclosingMethod().getName()));
+        EbayHomePage ebayHomePage = PageFactory.initElements(driver, EbayHomePage.class);
+        ebayHomePage.ebayDiversityPage();
+    }
+
+    @Test
+    public void UserFindTv() {
         TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
         }.getClass().getEnclosingMethod().getName()));
         EbayHomePage ebayHomePage = PageFactory.initElements(driver, EbayHomePage.class);
         ebayHomePage.identify();
     }
+
     @Test
-    public void ebayDeals(){
+    public void ebayDeals() {
         TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
         }.getClass().getEnclosingMethod().getName()));
         EbayHomePage ebayHomePage = PageFactory.initElements(driver, EbayHomePage.class);
         ebayHomePage.userDailyDeals();
     }
 
+//    @Test(priority = 5, enabled = true)
+//    public void testElectronicOption() {
+//        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
+//        }.getClass().getEnclosingMethod().getName()));
+//        EbayHomePage ebayHomePage = PageFactory.initElements(driver, EbayHomePage.class);
+////        getInitElements();
+//        ebayHomePage.electronics();
+//        ebayHomePage.validationSearch5();
+//    }
+//    @DataProvider
+//    public static Object[][] getData() throws IOException, IOException {
+//        DataReader reader= new DataReader();
+//        Object[][] Data = reader.fileReader3("itemslists");
+//        return Data;
+//    }
+//    @Test(dataProvider="getData",enabled = true)
+//    public void TestItems(String Items){
+//        getInitElements();
+//        mainhomepage.searchItemsFromXlsx(Items);
+//    }
 
 
-}
+    }
+
 
 
 

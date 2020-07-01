@@ -1,18 +1,21 @@
 package hometest;
 
-
+import Homepage.HBOHomePage;
 import common.WebAPI;
-import homepage2.HBOHomePage;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class HBOHomeTest extends WebAPI {
-    HBOHomePage hboHomePage ;
-//    @BeforeMethod
-//    public void initializeElement () {
-//        hp= PageFactory.initElements(driver,HomePage.class);
-//    }
+class HBOHomePageTest extends WebAPI {
+    HBOHomePage hboHomePage;
+    @BeforeMethod
+    public void initializeElement () {
+        hboHomePage= PageFactory.initElements(driver,HBOHomePage.class);
+    }
+    //Hbo general test cases on Homepage
     @Test
     public void clickSearchButton () { hboHomePage.clickOnSearchButton(); }
+
     @Test
     public void clickGetHBO() {hboHomePage.clickonGetHBO(); }
     @Test
@@ -21,8 +24,6 @@ public class HBOHomeTest extends WebAPI {
     public void clickLogo () {hboHomePage.clickOnLogo();}
     @Test
     public void clickSearchlink(){hboHomePage.clicksearchlink();}
-    //    @Test
-//    public void searchItems(){hp.sendInput();}
     @Test
     public void clickSeries(){hboHomePage.findSeries();}
     @Test
@@ -39,4 +40,4 @@ public class HBOHomeTest extends WebAPI {
     public void viewTwitterPage(){hboHomePage.getTwitterPage();}
     @Test
     public void viewYoutubePage(){hboHomePage.navigateToYoutubePage();}
-}
+    }

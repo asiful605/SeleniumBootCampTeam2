@@ -1,4 +1,4 @@
-package homepage2;
+package Homepage;
 
 import common.WebAPI;
 

@@ -16,7 +16,7 @@
 
     <test name="HBOHomePage">
         <classes>
-            <class name="homepage2.HBOHomePage"/>
+            <class name="Homepage.HBOHomePage"/>
 
 
 

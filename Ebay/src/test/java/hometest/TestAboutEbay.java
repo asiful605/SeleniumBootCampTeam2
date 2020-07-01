@@ -1,7 +1,7 @@
 package hometest;
 
 import common.WebAPI;
-import homepage2.AboutEbayPage;
+import Homepage.AboutEbayPage;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 import reporting.TestLogger;

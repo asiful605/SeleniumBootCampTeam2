@@ -1,7 +1,7 @@
 package hometest;
 
 import common.WebAPI;
-import homepage2.Delta_AirlineHomePage;
+import Homepage.Delta_AirlineHomePage;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
