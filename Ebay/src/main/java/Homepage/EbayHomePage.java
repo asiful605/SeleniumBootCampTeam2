@@ -213,32 +213,6 @@ WebElement clickSubmit;
     public void userDailyDeals(){
         clickDailyDeals.click();
     }
-//    public void electronics() {
-//        mouseHoverByXpath("//*[@id=\"gh-sbc\"]/tbody/tr/td[1]/h3[2]/a");
-//        electronics.click();
-//        mouseHoverByXpath("//a[contains(text(),'Home Surveillance')]");
-//        homeSurveillance.click();
-//    }
-//        public void validationSearch5() {
-//            String actualResult=driver.getTitle();
-//            Assert.assertEquals(actualResult,"Home Surveillance Systems for sale | In Stock | eBay");
-
-//    public void searchItemsAndSubmitButtonFromExcelFile()throws Exception, IOException, SQLException, ClassNotFoundException {
-//        //Read data from Excel file using Apache POI
-//        List<String> list = DataSource.getItemsListFromExcel();
-//        clickOnSearchButton();
-//        getSearchInputWebElement().sendKeys(list.get(1), Keys.ENTER);
-//        navigateBack();
-//        clickOnSearchButton();
-//        for (int i = 2; i < list.size(); i++) {
-//            getSearchNewInputWebElement().sendKeys(list.get(i), Keys.ENTER);
-//            navigateBack();
-//            clickOnSearchButton();
-//            clearInput();
-//        }
-//public void searchItemsFromXlsx(String Items){
-//    usersearchbox.sendKeys(Items);
-//}
 
 
 
